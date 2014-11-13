@@ -1,0 +1,32 @@
+/* ====================================================
+ * Company: Unity Technologies
+ * Author:  Rickard Andersson, rickard@unity3d.com
+======================================================= */
+
+div.header-wrapper {
+  position: static;
+}
+div.header div.content {
+  width: 984px;
+}
+div.header div.search input.field {
+  width: 180px;
+}
+div.toolbar div.content {
+  width: 984px; z-index: 999;
+}
+div.master-wrapper {
+  width: 984px; padding: 30px 20px 20px 20px;
+}
+div.content-wrap {
+  width: 684px; float: left; margin: 0;
+}
+div.content-block {
+  margin: 0;
+}
+div.content-wrap div.content {
+  width: 704px;
+}
+div.footer {
+  width: 984px; 
+}
