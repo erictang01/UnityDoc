@@ -1,0 +1,258 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Flash: Building &amp; Running</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="../StaticFilesManual/js/toc_en.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/flash-building.html">English</a></li>
+<li><a href="/es/current/Manual/flash-building.html">Español</a></li>
+<li><a href="/ru/current/Manual/flash-building.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="PlatformSpecific.html">Platform Specific</a></li>
+<li><a href="Web.html">Web</a></li>
+<li><a href="flash-gettingstarted.html">Getting Started with Flash Development</a></li>
+<li>Flash: Building &amp; Running</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="flash-setup.html"></a></span><div class="tip">Flash: Setup</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="flash-debugging.html"></a></span><div class="tip">Flash: Debugging</div>
+</div>
+</div></div>
+<h1>Flash: Building &amp; Running</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>The following is a step-by-step guide to build and run a new project exported to Flash.</p>
+
+<ol>
+<li>Create your Unity content.</li>
+<li>Choose File-&gt;Build Settings to bring up the Build Settings dialog and add your scene(s).</li>
+<li>Change the Platform to Flash Player</li>
+<li>Target Player can be left as the default. This option enables you to change the target Flash Player based on the features you require (see http://www.adobe.com/support/documentation/en/flashplayer/releasenotes.html for details).</li>
+<li>Tick Development Build. (This causes Unity to <strong>not</strong> compress the final SWF file. Not compressing will make the build faster, and also, the SWF file will not have to be decompressed before being run in the Flash Player. Note that an empty scene built using the Development Build option will be around 16M in size, compared to around 2M compressed.)</li>
+<li>Press the Build button.</li>
+</ol>
+
+<figure>
+<img src="../uploads/Main/FlashExportBuildSettings.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>Unity will build a SWF file at the location you choose. Additionally it will create the following files:</p>
+
+<ul>
+<li>an html file - Use this to view your Flash-built content.</li>
+<li>a swfobject.js file - Handles checking for the Flash Player and browser integration.</li>
+<li>an embeddingapi.swc file.</li>
+</ul>
+
+<p>To view your Flash-built content open the html file. Do not open the SWF file directly.</p>
+
+<p>Build-and-run will create the same files, launch your default browser and load the generated html file.</p>
+
+<p>The embeddingapi.swc file created in the build allows you to load the SWF in your own project. Embedding the Unity content in a standard flash project allows you to do GUI in Flash. This type of Flash integration will of course not work in any of the other build targets.</p>
+
+<p>As with the other build targets, there are Player settings that you can specify. Most of the Flash settings are shared with other platforms. Note that the resolution for the content is taken from the Standalone player settings.</p>
+
+<p>We allow for a Flash API that gives you texture handles, which in combination with the swc embedding will give you means to do webcam, video, vector graphics from flash as textures.</p>
+
+<h2>The Build Process</h2>
+
+<p>The Unity Flash Publisher attempts to convert scripts from C#/UnityScript into ActionScript. In this process, there can be two kinds of conversion errors:</p>
+
+<ul>
+<li>errors during conversion of unity code to ActionScript</li>
+<li>errors while compiling the converted code.</li>
+</ul>
+
+<p>Errors during conversion will point to the original files and will have the familiar UnityScript error messages with file names and line numbers. </p>
+
+<p>Errors during the compilation of the converted ActionScript will take you to the message in the generated ActionScript code (with filenames ending with <code>.as</code>).</p>
+
+<h2>Debugging Converted ActionScript Code</h2>
+
+<p>During a build, the converted ActionScript (<code>.as</code>) files are stored within your project folder in:</p>
+
+<ul>
+<li>/Temp/StagingArea/Data/ConvertedDotNetCode/</li>
+</ul>
+
+<p>If you encounter errors with your SWF (at runtime or during a build), it can be useful to look at this converted code.</p>
+
+<p>It is possible that any ActionScript errors at compilation time will not be easily understood. Just remember that the ActionScript is generated from your game script code, so any changes you need to make will be in your original code and not the converted ActionScript files.</p>
+
+<h2>Building for a specific Flash Player version</h2>
+
+<p>The dropdown box in the build settings window will enable you to choose which Flash Player version you wish to target. This will always default to the lowest supported Flash Player version (currently 11.2) upon creating/reopening your Unity project.</p>
+
+<p>If you wish to build for a specific Flash Player version you can do so by creating an editor script to perform the build for you. In order to do this, you can specify a <a href="http://docs.unity3d.com/Documentation/ScriptReference/FlashBuildSubtarget.html">FlashBuildSubtarget</a> in your <a href="http://docs.unity3d.com/Documentation/ScriptReference/EditorUserBuildSettings.html">EditorUserBuildSettings</a> when building to Flash from an editor script. For example:</p>
+
+<pre><code>EditorUserBuildSettings.flashBuildSubtarget = FlashBuildSubtarget.Flash11dot2;
+BuildPipeline.BuildPlayer(..., ..., BuildTarget.FlashPlayer, BuildOptions.Development);
+
+
+</code></pre>
+
+<h2>Example Build Errors and Warnings</h2>
+
+<p>Below are some common errors/warnings you may encounter when using the Flash export. We also have sections on the <a href="http://forum.unity3d.com/forums/36-Flash-Development">Forums</a> and <a href="http://answers.unity3d.com/questions/topics/flash.html">Answers</a> dedicated to Flash export which may be of help if your error is not listed below.</p>
+
+<h3>Unable to find Java</h3>
+
+<pre><code>Error building Player: Exception: Compiling SWF Failed: Unable to launch Java - is the Java Runtime Environment (JRE) installed?
+
+
+</code></pre>
+
+<p>If you encounter the above error at build time, please <a href="http://www.oracle.com/technetwork/java/javase/install-windows-141940.html">install the 32-bit JRE</a> and try again. </p>
+
+<h3>‘TerrainCollider’ is not supported</h3>
+
+<pre><code>'TerrainCollider' is not supported when building for FlashPlayer. 
+'TerrainData' is not supported when building for FlashPlayer. 
+Asset: 'Assets/New Terrain.asset'
+
+
+</code></pre>
+
+<p>The terrain feature is not supported when building for the FlashPlayer target. All <a href="flash-whatssupported.html">un-supported features</a> will generate a similar warning. Note that the build will continue, however, the unsupported feature will be missing from the final SWF.</p>
+
+<h3>Unboxing</h3>
+
+<pre><code>Error: Call to a possibly undefined method RuntimeServices_UnboxSingle_Object through a reference with static type Class.
+
+
+</code></pre>
+
+<p>This is likely because the conversion between types that is defined on the UnityScript side is not defined for our Flash Publisher. Any time you see an error that refers to <code>Unbox</code> it means a type conversion is required but cannot be found. In order to resolve these issues:</p>
+
+<ul>
+<li>Do not forget to use <code>#pragma strict</code>, and take care of all “implicit downcast” warning messages.</li>
+<li>The rule of thumb is to avoid runtime casts from Object to primitive types (int, float, etc.). Also prefer containers with explicit types to generic ones, for example:
+
+<ul>
+<li>System.Collections.Generic.List.&lt;float&gt; instead of Array</li>
+<li>Dictionary&lt;string, float&gt; instead of Hashtable</li>
+</ul>
+</li>
+</ul>
+
+<h3>UnauthorizedAccessException</h3>
+
+<pre><code>Error building Player: UnauthorizedAccessException: Access to the path &quot;Temp/StagingArea/Data/ConvertedDotNetCode/global&quot; is denied.
+
+
+</code></pre>
+
+<p>If Unity-generated ActionScript files are open in a text editor, Unity may refuse to build issuing this error. To fix this, please close the ActionScript files and allow Unity to overwrite them.</p>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="flash-setup.html"></a></span><div class="tip">Flash: Setup</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="flash-debugging.html"></a></span><div class="tip">Flash: Debugging</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

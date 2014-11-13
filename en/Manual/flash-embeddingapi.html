@@ -1,0 +1,390 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Flash: Embedding Unity Generated Flash Content in Larger Flash Projects</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="../StaticFilesManual/js/toc_en.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/flash-embeddingapi.html">English</a></li>
+<li><a href="/es/current/Manual/flash-embeddingapi.html">Español</a></li>
+<li><a href="/ru/current/Manual/flash-embeddingapi.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="PlatformSpecific.html">Platform Specific</a></li>
+<li><a href="Web.html">Web</a></li>
+<li><a href="flash-gettingstarted.html">Getting Started with Flash Development</a></li>
+<li>Flash: Embedding Unity Generated Flash Content in Larger Flash Projects</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="flash-whatssupported.html"></a></span><div class="tip">Flash: What is and is not supported</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="flashexamples-supplyingdata.html"></a></span><div class="tip">Example: Supplying Data from Flash to Unity</div>
+</div>
+</div></div>
+<h1>Flash: Embedding Unity Generated Flash Content in Larger Flash Projects</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<h2>embeddingapi.swc</h2>
+
+<p>If you want to embed your Unity generated Flash content within a larger Flash project, you can do so using the <span class="doc-keyword">embeddingapi.swc</span>. This SWC provides functionality to load and communicate with Unity published Flash content. In the <span class="doc-keyword">embeddingapi.swc</span> file, you will find two classes and two interfaces. Each of these, and their available functions, are described below.</p>
+
+<p>When your Unity Flash project is built, a copy of the embeddingapi.swc file will be placed in the same location as your built SWF. You can then use this in your Flash projects as per other SWCs. For more details on <a href="http://www.adobe.com/mena_fr/devnet/flash/articles/concept_swc.html">what SWCs are</a> and how to use them, see <a href="http://livedocs.adobe.com/flex/3/html/help.html?content=building_overview_5.html">Adobe’s documentation</a>.</p>
+
+<h2>Stage3D Restrictions</h2>
+
+<p>When embedding your Unity Flash content within another Flash project, it is useful to understand the Flash display model. All Stage3D content is displayed behind the Flash Stage. This means that any Flash display list content added to the Stage will always render in front of your 3D content. For more information on this, please refer to <a href="http://www.adobe.com/devnet/flashplayer/articles/how-stage3d-works.html">Adobe’s “How Stage3D Works” page</a>.</p>
+
+<h2>IUnityContent</h2>
+
+<p>
+<span class="doc-prop">IUnityContent</span> is implemented by Unity built Flash content. This interface is how you communicate with or modify the Untiy content.</p>
+
+<h3>Methods:</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">getTextureFromNativeId(id : int) : TextureBase;</td>
+	<td style="text-align:left;">Enables retrieving of textures. A full example project using this can be found on the <a href="http://forum.unity3d.com/threads/128057-Flash-Simple-AS3-Bridge-Demo-Loading-textures-from-web.?p=864642&amp;viewfull=1#post864642">forums</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">sendMessage(objectPath : String, methodName : String, value : Object = null) : Boolean;</td>
+	<td style="text-align:left;">The <span class="doc-prop">sendMessage</span> function can be used to call a method on an object in the Unity content.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">setContentHost(contentHost : IUnityContentHost) : void;</td>
+	<td style="text-align:left;">Sets the host (which must implement <span class="doc-prop">IUnityContentHost</span>) for the Unity content. The host can then listen for when the Unity content has loaded/started.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">setSize(width : int, height : int) : void;</td>
+	<td style="text-align:left;">Modifies the size of the Unity content</td>
+</tr>
+<tr>
+	<td style="text-align:left;">setPosition(x:int = 0, y:int = 0):void;</td>
+	<td style="text-align:left;">Enables you to reposition the Unity content within the content host.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">startFrameLoop() : void;</td>
+	<td style="text-align:left;">Starts the Unity content.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">stopFrameLoop() : void;</td>
+	<td style="text-align:left;">Stops the unity content.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">forceUnload():void;</td>
+	<td style="text-align:left;">Unloads the Unity flash content.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>IUnityContentHost</h2>
+
+<p>This must be implemented by whichever class will host the Unity content.</p>
+
+<h3>Methods:</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">unityInitComplete() : void;</td>
+	<td style="text-align:left;">Called when the Unity engine is done initializing and the first level is loaded.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">unityInitStart() : void;</td>
+	<td style="text-align:left;">Called when the content is loaded and the initialization of the Unity engine is started.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>UnityContentLoader</h2>
+
+<p>The <span class="doc-prop">UnityContentLoader</span> class can be used to load Unity published Flash content and extends the AS3 <a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/display/Loader.html">Loader</a> class. As with standard AS3 Loader instances, you can add event listeners to its <span class="doc-prop">contentLoaderInfo</span> in order to know the progress of the load and when it is complete.</p>
+
+<h3>Constructor:</h3>
+
+<pre><code>UnityContentLoader(contentURL : String, contentHost : IUnityContentHost = null, params : UnityLoaderParams = null, autoLoad : Boolean = true) : void;
+
+
+</code></pre>
+
+<p>Creates a <span class="doc-prop">UnityContentLoader</span> instance which you can attach event listeners to and use to load the unity content.</p>
+
+<ul>
+<li>
+<span class="doc-prop">contentURL</span>: The URL of the Unity published SWF to load.</li>
+<li>
+<span class="doc-prop">contentHost</span>: The host for the content. This should be your own ActionScript class that implements <span class="doc-prop">IUnityContentHost</span>.</li>
+<li>
+<span class="doc-prop">params</span>: Supply a <span class="doc-prop">UnityLoaderParams</span> instance if you wish to override the default load details.</li>
+<li>
+<span class="doc-prop">autoLoad</span>: If set to true, the load will begin as soon as the <span class="doc-prop">UnityContentLoader</span> has been created (rather than needing to call <span class="doc-prop">loadUnity()</span> separately). If you wish to track progress of the load using events, this should be set to false. You can then call <span class="doc-prop">loadUnity()</span> manually once the relevant event listeners have been added.</li>
+</ul>
+
+<h3>Accessible Properties:</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">unityContent : IUnityContent;</td>
+	<td style="text-align:left;">Once the content has finished loading, you can access the Unity content to perform functionality such as <span class="doc-prop">sendMessage()</span>.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Methods:</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">loadUnity() : void;</td>
+	<td style="text-align:left;">Instructs the <span class="doc-prop">UnityContentLoader</span> to load the Unity content from the URL supplied in the constructor.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">forceUnload() : void;</td>
+	<td style="text-align:left;">Unloads the unity content from the host.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">unload() : void;</td>
+	<td style="text-align:left;">Overrides the default unload() method of the AS3 <a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/display/Loader.html">Loader</a> class and calls forceUnload.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">unloadAndStop(gc:Boolean = true):void</td>
+	<td style="text-align:left;">Unloads the unity content then calls the default Loader implementation of unloadAndStop(gc).</td>
+</tr>
+</tbody>
+</table>
+
+<h2>UnityLoaderParams</h2>
+
+<h3>Constructor:</h3>
+
+<p>Parameters can be supplied to the <span class="doc-prop">UnityContentLoader</span> when created to provide additional loader configuration.</p>
+
+<pre><code>function UnityLoaderParams(scaleToStage : Boolean = false, width : int = 640, height : int = 480, usePreloader : Boolean = false, autoInit : Boolean = true, catchGlobalErrors : Boolean = true) : void;
+
+
+</code></pre>
+
+<ul>
+<li>
+<span class="doc-prop">scaleToStage</span>: Whether the Unity content remains at a fixed size or whether it scales as the parent Flash window resizes.</li>
+<li>
+<span class="doc-prop">width</span>: The width of the Unity content.</li>
+<li>
+<span class="doc-prop">height</span>: The height of the Unity content.</li>
+<li>
+<span class="doc-prop">usePreloader</span>: Whether or not to show the Unity preloader.</li>
+<li>
+<span class="doc-prop">autoInit</span>: This is not currently used.</li>
+<li>
+<span class="doc-prop">catchGlobalErrors</span>: Whether to catch errors and display them in a red box in the top left corner of the swf.</li>
+</ul>
+
+<h2>Example</h2>
+
+<p>The following example shows how to load Unity published Flash content into a host SWF. It shows how to supply custom <span class="doc-prop">UnityLoaderParams</span> and track progress of the file load. Once the Unity content has been added to the host, a function in the Unity content is called using the <span class="doc-prop">sendMessage</span> function.</p>
+
+<h3>ActionScript 3</h3>
+
+<pre><code>package
+{
+    public class MyLoader extends Sprite implements IUnityContentHost
+    {
+     private var unityContentLoader:UnityContentLoader;
+    
+     public function MyLoader()
+     {
+         var params:UnityLoaderParams = new UnityLoaderParams(false,720,400,false);
+         unityContentLoader = new UnityContentLoader(&quot;UnityContent.swf&quot;, this, params, false);
+         unityContentLoader.contentLoaderInfo.addEventListener(ProgressEvent.PROGRESS, onUnityContentLoaderProgress);
+         unityContentLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, onUnityContentLoaderComplete);
+         unityContentLoader.loadUnity();
+     }
+    
+     private function onUnityContentLoaderProgress(event:ProgressEvent):void
+     {
+         //Respond to load progress
+     }
+            
+     private function onUnityContentLoaderComplete(event:Event):void
+     {
+         addChild(unityContentLoader);
+         unityContentLoader.unityContent.setContentHost(this);
+     }
+    
+     //unityInitStart has to be implemented by whatever implements IUnityContenthost
+     //This is called when the content is loaded and the initialization of the unity engine is started.
+     public function unityInitStart():void
+     {
+        //Unity engine started  
+     }
+        
+     //unityInitComplete has to be implemented by whatever implements IUnityContenthost
+     //This is called when the unity engine is done initializing and the first level is loaded.
+     public function unityInitComplete():void
+     {
+         unityContentLoader.unityContent.sendMessage(&quot;Main Camera&quot;,&quot;SetResponder&quot;,{responder:this});
+     }
+    
+     ...
+     
+    }
+}
+
+
+</code></pre>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="flash-whatssupported.html"></a></span><div class="tip">Flash: What is and is not supported</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="flashexamples-supplyingdata.html"></a></span><div class="tip">Example: Supplying Data from Flash to Unity</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Navigation Meshes</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="../StaticFilesManual/js/toc_en.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/Navmeshes.html">English</a></li>
+<li><a href="/es/current/Manual/Navmeshes.html">Español</a></li>
+<li><a href="/ru/current/Manual/Navmeshes.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="Navigation.html">Navigation and Pathfinding</a></li>
+<li>Navigation Overview</li>
+<li>Navigation Meshes</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="Navigation.html"></a></span><div class="tip">Navigation and Pathfinding</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="EnablingCharToNavigate.html"></a></span><div class="tip">Enabling a Character to Navigate</div>
+</div>
+</div></div>
+<h1>Navigation Meshes</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>A pathfinding system needs a way to represent which parts of the game world can be reached by a character and also a way to determine the possible routes between any two points and choose the best. A mesh (similar to the ones used for 3D graphics) is a good solution to both problems. The reachable area is defined by the polygons of the mesh, while the possible paths through the mesh are conveniently broken down into hops between adjacent polygons. In theory, the same mesh that is used for the floor graphics can also be used for navigation. In practice, the graphical mesh is usually too detailed and consequently inefficient for navigation. For this and other reasons, an AI system usually supplements the floor mesh with a simpler, invisible mesh known as a <span class="doc-keyword">navigation mesh</span> (or “navmesh” for short). Fortunately, there are techniques to generate an efficient navmesh automatically from a graphical floor mesh and a few numeric parameters. The process of computing a navmesh in this way is known as <span class="doc-keyword">baking</span>.</p>
+
+<p>In Unity, navmesh generation is handled from the Navigation window (menu: <span class="doc-menu">Window &gt; Navigation</span>). If you select the <em>Object</em> tab in the window, you will see something like the following:-</p>
+
+<figure>
+<img src="../uploads/Main/NavWindowObjectPanel.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>The <em>Scene Filter</em> options simply restrict the selection of objects shown in the Scene view and Hierarchy panel. The other options apply to the selected scene object(s); broadly, they allow you to include or exclude an object within the walkable area of the navmesh. You should mark objects to be included in the navmesh as <em>Navigation Static</em>. You can then set the <em>Navigation Layer</em> to <em>Default</em> if you want the area to be walkable or to <em>Not Walkable</em> otherwise. Typically, the walkable areas correspond to floors, ramps and bridges in the game world, while non-walkable areas correspond to walls and other impassable obstacles.</p>
+
+<p>Selecting <em>Bake</em> gives you further options for navmesh generation on a separate tab:-</p>
+
+<figure>
+<img src="../uploads/Main/NavWindowBakePanel.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>Of particular note are the <em>General</em> settings. The <em>Radius</em> determines how close a navigating character can get to a wall and consequently the width of the narrowest gap between two walls that can it can squeeze through. The <em>Height</em> refers to the height of the “ceiling” above the navmesh surface - an area may not be reachable simply because there is not enough headroom for the character. The <em>Max Slope</em> parameter sets the threshold of steepness where a ramp becomes a wall while the <em>Step Height</em> is the maximum height of bump or step in the floor surface that is ignored by the character (any step greater than this height results in a disconnected walkable area rather than a continuation of the same area).</p>
+
+<p>With these parameters set, you can click the <em>Bake</em> button to compute the navmesh. The baking usually takes place very quickly and the resulting navmesh will be shown in the Scene as an overlay on the underlying level geometry. You may need a few attempts based on what you see in the scene before you get the settings for the navmesh just right.</p>
+
+<figure>
+<img src="../uploads/Main/NavMeshBaked.png" alt="">
+<figcaption></figcaption></figure>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="Navigation.html"></a></span><div class="tip">Navigation and Pathfinding</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="EnablingCharToNavigate.html"></a></span><div class="tip">Enabling a Character to Navigate</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

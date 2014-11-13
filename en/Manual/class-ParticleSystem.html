@@ -1,0 +1,973 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Particle system</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="../StaticFilesManual/js/toc_en.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/class-ParticleSystem.html">English</a></li>
+<li><a href="/es/current/Manual/class-ParticleSystem.html">Español</a></li>
+<li><a href="/ru/current/Manual/class-ParticleSystem.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="Graphics.html">Graphics</a></li>
+<li><a href="GraphicsReference.html">Graphics Reference</a></li>
+<li>Particle system</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SL-BuiltinValues.html"></a></span><div class="tip">ShaderLab built-in values</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="comp-ParticlesLegacy.html"></a></span><div class="tip">Particle Systems (Legacy, prior to release 3.5)</div>
+</div>
+</div></div>
+<h1>Particle system</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><a href='../ScriptReference/ParticleSystem.html' title='Go to ParticleSystem page in the Scripting Reference' class='switch-link gray-btn smallbtn mr0 right'>Switch to Scripting</a><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>A <span class="doc-keyword">Particle System</span> component simulates fluid entities such as liquids, clouds and flames by generating and animating large numbers of small 2D images in the scene. For a full introduction to particle systems and their uses, see the <a href="ParticleSystems.html">manual page</a>.</p>
+
+<h2>Properties</h2>
+
+<p>The Particle System component has many properties and for convenience, the inspector organises them into collapsible sections or “modules” described below. Each section can be expanded and collapsed by clicking the bar that shows its name. At the left side of the bar is a checkbox that can be used to enable or disable the functionality of the properties in that section. For example, if you don’t want to vary the sizes of particles over their lifetime, you can simply uncheck the <em>Size over lifetime</em> section.</p>
+
+<figure>
+<img src="../uploads/Main/PartSysMainInsp.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>Aside from the module bars, the inspector contains a few other controls. The <em>Open Editor</em> button shows the options in a separate editor window that also allows you to edit multiple systems at once. The <em>Resimulate</em> checkbox determines whether or not property changes should be applied immediately to particles already generated by the system (the alternative is that existing particles are left as they are and only the new particles have the changed properties). The <em>Wireframe</em> button shows the outlines of the mesh objects used to show the particles in the scene.</p>
+
+<h2>Particle System Module</h2>
+
+<p>This module contains global properties that affect the system overall.</p>
+
+<figure>
+<img src="../uploads/Main/PartSysPartSysInsp.png" alt="">
+<figcaption></figcaption></figure>
+
+<h3>Properties</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Duration</span></td>
+	<td style="text-align:left;">The length of time the system will run.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Looped</span></td>
+	<td style="text-align:left;">If enabled, the system will start again at the end of its <em>duration</em> time and continue to repeat the cycle.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Prewarm</span></td>
+	<td style="text-align:left;">If enabled, the system will be initialized as though it had already completed a full cycle (only works if <em>Looping</em> is also enabled).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Start Delay</span></td>
+	<td style="text-align:left;">Delay in seconds before the system starts emitting once enabled.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Start Lifetime</span></td>
+	<td style="text-align:left;">The initial lifetime for particles.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Start Speed</span></td>
+	<td style="text-align:left;">The initial speed of each particle in the appropriate direction.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Start Size</span></td>
+	<td style="text-align:left;">The initial size of each particle.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Start Rotation</span></td>
+	<td style="text-align:left;">The initial rotation angle of each particle.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Start Color</span></td>
+	<td style="text-align:left;">The initial color of each particle.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Gravity Multiplier</span></td>
+	<td style="text-align:left;">Scales the gravity value set in the physics manager. A value of zero will switch gravity off.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Inherit Velocity</span></td>
+	<td style="text-align:left;">Do the particles start with the same velocity as the particle system object?</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Simulation Space</span></td>
+	<td style="text-align:left;">Should particles be animated in the parent object’s local space (and therefore move with the object) or in world space?</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Play on Awake</span></td>
+	<td style="text-align:left;">Does the system start automatically when the object is created?</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Max Particles</span></td>
+	<td style="text-align:left;">The maximum number of particles in the system at once. Older particles will be removed when the limit is reached.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Details</h3>
+
+<p>The system emits particles for a specific duration but can be set to emit continuously using the <em>Looped</em> property. This means you can create, say, smoke in short puffs or in a steady stream. The “Start” properties (for lifetime, speed, size, rotation and color) specify the state of a particle on emission but other property groups (such as <em>Size Over Lifetime</em>) can modify the values as the system progresses. Also, all of these properties can have randomised values in a range specified by curves. All particle systems use the same gravity vector specified in the physics settings but the <em>Gravity Multiplier</em> value can be used to scale the gravity or switch it off if set to zero (dust clouds will fall to earth but not at the same rate as solid objects). The <em>Inherit Velocity</em> and <em>Simulation Space</em> properties together determine whether the particles move with the particle system object or independently in the game world. Systems like clouds, hoses and flamethrowers will tend to leave trails that persist in world space even if the object producing them moves around. On the other hand, when particles are used to create a spark between two electrodes, the spark should move along with the object.</p>
+
+<h2>Emission Module</h2>
+
+<p>The properties in this module affect the rate and timing of particle emissions.</p>
+
+<figure>
+<img src="../uploads/Main/PartSysEmissionInsp.png" alt="">
+<figcaption></figcaption></figure>
+
+<h3>Properties</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Rate</span></td>
+	<td style="text-align:left;">The number of particles emitted per unit of time or distance moved (selected from the adjacent popup menu).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Bursts</span></td>
+	<td style="text-align:left;">Allows extra particles to be emitted at specified times (only available when the <em>Rate</em> is in <em>Time</em> mode).</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Details</h3>
+
+<p>The rate of emission can be constant or can vary over the lifetime of the system according to a curve. If <em>Distance</em> mode is selected then a certain number of particles are released per unit of distance moved by the parent object. This is very useful for simulating particles that are actually created by the motion of the object (eg, dust from a car’s wheels on a dirt track). Note that <em>Distance</em> mode is only available when <em>Simulation Space</em> is set to <em>World</em> in the Particle System section. If the rate is set to <em>Time</em> mode then the desired number of particles will be emitted each second regardless of how the parent object moves. Additionally, you can add bursts of extra particles that appear at specific times. For example, you might have a steam engine chimney that produces puffs of smoke.</p>
+
+<h2>Shape Module</h2>
+
+<p>This module is used to select the shape of the emission volume and where the particles are launched from within it.</p>
+
+<figure>
+<img src="../uploads/Main/PartSysShapeInsp.png" alt="">
+<figcaption></figcaption></figure>
+
+<h3>Properties</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Shape</span></td>
+	<td style="text-align:left;">The shape of the emission volue: Sphere, Hemisphere, Cone, Box or Mesh. For the Mesh shape, there is an extra menu to select whether particles are emitted from the vertices, triangles or edges of the mesh.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Random Direction</span></td>
+	<td style="text-align:left;">When enabled, the particles’ initial direction will be chosen randomly.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Radius</span></td>
+	<td style="text-align:left;">The radius of the circular aspect of the shape (for Sphere, Hemisphere and Cone only).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Angle</span></td>
+	<td style="text-align:left;">The angle of the cone at its point (for Cone only). An angle of 0 produces a cylinder while an angle of 90 gives a flat disc.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Box X, Y, Z</span></td>
+	<td style="text-align:left;">Width, height and depth of the box shape (for Box only).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Mesh</span></td>
+	<td style="text-align:left;">The mesh that provides the emitter’s shape (for Mesh only).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Emit from Shell</span></td>
+	<td style="text-align:left;">Should particles be emitted from the outer surface rather than the inner volume of the shape? (For Sphere and Hemisphere only).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Emit from</span></td>
+	<td style="text-align:left;">Selects the part of the cone to emit from: Base, Volume, Base Shell or Volume Shell (for Cone only).</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Details</h3>
+
+<p>All the shapes except <em>Mesh</em> have properties that define their dimensions (eg, radius). These can be edited by dragging the handles on the wireframe emitter shape in the scene view. The choice of shape affects the region from which particles can be launched but also the initial direction of the particles. For example, a sphere throws particles outward in all directions, a cone produces a diverging stream of particles and a mesh emits particles in directions that are normal to the surface.</p>
+
+<h2>Velocity Over Lifetime Module</h2>
+
+<p>Acceleration can be applied to change the velocities of particles over their lifetime, as specified in this module.</p>
+
+<figure>
+<img src="../uploads/Main/PartSysVelOverLifeInsp.png" alt="">
+<figcaption></figcaption></figure>
+
+<h3>Properties</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">X, Y, Z</span></td>
+	<td style="text-align:left;">Velocity in the X, Y and Z axes.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Space</span></td>
+	<td style="text-align:left;">Selects whether the X, Y and Z axes refer to local or world space.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Details</h3>
+
+<p>This effect can be used to create an overall drift of particles in a particular direction.</p>
+
+<h2>Limit Velocity Over Lifetime Module</h2>
+
+<p>This module controls how the speed of particles is reduced over their lifetime.</p>
+
+<figure>
+<img src="../uploads/Main/PartSysLimVelLifeInsp.png" alt="">
+<figcaption></figcaption></figure>
+
+<h3>Properties</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Speed</span></td>
+	<td style="text-align:left;">Speed limit (split into separate X, Y and Z components if <em>Separate Axes</em> is enabled).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Space</span></td>
+	<td style="text-align:left;">Selects whether the speed limitation refers to local or world space (only when <em>Separate Axes</em> is enabled).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Dampen</span></td>
+	<td style="text-align:left;">The fraction by which a particle’s speed will be reduced when it exceeds the speed limit.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Details</h3>
+
+<p>This effect is very useful for simulating air resistance that slows the particles, especially when a decreasing curve is used to lower the speed limit over time. For example, an explosion or firework initially bursts at great speed but the particles emitted from it rapidly slow down as they pass through the air.</p>
+
+<h2>Force Over Lifetime Module</h2>
+
+<p>Particles can be accelerated by forces (wind, attraction, etc) that are specified in this module.</p>
+
+<figure>
+<img src="../uploads/Main/PartSysForceOverLifeInsp.png" alt="">
+<figcaption></figcaption></figure>
+
+<h3>Properties</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">X, Y, Z</span></td>
+	<td style="text-align:left;">Force applied to each particle in the X, Y and Z axes.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Space</span></td>
+	<td style="text-align:left;">Selects whether the force is applied in local or world space.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Details</h3>
+
+<p>Fluids are often affected by forces as they move. For example, smoke will accelerate slightly as it rises from a fire, carried up by the hot air around it. Subtle effects can be achieved by using curves to control the force over the particles’ lifetimes. Using the previous example, smoke will initially accelerate upward but as the rising air gradually cools, the force will diminish. Thick smoke from a fire might initially accelerate, then slow down as it spreads and perhaps even start to fall to earth if it persists for a long time.</p>
+
+<h2>Color Over Lifetime Module</h2>
+
+<p>This module specifies how a particle’s color and transparency vary over time.</p>
+
+<figure>
+<img src="../uploads/Main/PartSysColorOverLifeInsp.png" alt="">
+<figcaption></figcaption></figure>
+
+<h3>Properties</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Color</span></td>
+	<td style="text-align:left;">The color gradient of a particle over its lifetime.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Details</h3>
+
+<p>Many types of natural and fantastical particles vary in color over time and so this property has many uses. For example, white hot sparks will cool as they pass through the air and a magic spell might burst into a rainbow of colors. Perhaps the more important aspect, though, is the variation of alpha (transparency). It is very common for particles to burn out, fade or dissipate as they reach the end of their lifetime (hot sparks, fireworks, smoke particles) and a simple diminishing gradient produces this effect very convincingly.</p>
+
+<h2>Color By Speed Module</h2>
+
+<p>The color of a particle can be set here to change according to its speed in distance units per second.</p>
+
+<figure>
+<img src="../uploads/Main/PartSysColorBySpeedInsp.png" alt="">
+<figcaption></figcaption></figure>
+
+<h3>Properties</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Color</span></td>
+	<td style="text-align:left;">The color gradient of a particle defined over a speed range.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Speed Range</span></td>
+	<td style="text-align:left;">The low and high ends of the speed range to which the color gradient is mapped (speeds outside the range will map to the end points of the gradient).</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Details</h3>
+
+<p>Burning or glowing particles, such as sparks, will tend to burn more brightly when they move quickly through the air (being exposed to more oxygen) but then dim slightly as they slow down. To simulate this, you might use <em>Color By Speed</em> with a gradient that has white at the upper end of the speed range and red at the lower end.</p>
+
+<h2>Size Over Lifetime Module</h2>
+
+<p>Many effects involve a particle changing size according to a curve, which can be set in this module.</p>
+
+<figure>
+<img src="../uploads/Main/PartSysSizeOverLifeInsp.png" alt="">
+<figcaption></figcaption></figure>
+
+<h3>Properties</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Size</span></td>
+	<td style="text-align:left;">A curve defining the particle’s size over its lifetime.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Details</h3>
+
+<p>Particles that represent gases, flames or smoke will typically change in size as they move away from the point of emission. For example, smoke will tend to disperse and occupy a larger volume over time. This effect can be achieved by setting the curve for the smoke particle to an upward ramp, increasing with the particle’s age. (The effect is enhanced if <em>Color Over Lifetime</em> is also used to fade the smoke as it spreads.) For fireballs created by burning fuel, the flame particles will tend to expand after emission but then fade and shrink as the fuel is used up and the flame dissipates. In this case, the curve would have a rising “hump” that then falls back down to a smaller size.</p>
+
+<h2>Size By Speed Module</h2>
+
+<p>The size of a particle can be set here to change according to its speed in distance units per second.</p>
+
+<figure>
+<img src="../uploads/Main/PartSysSizeBySpeed.png" alt="">
+<figcaption></figcaption></figure>
+
+<h3>Properties</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Size</span></td>
+	<td style="text-align:left;">A curve defining the particle’s size over a speed range.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Speed Range</span></td>
+	<td style="text-align:left;">The low and high ends of the speed range to which the size curve is mapped (speeds outside the range will map to the end points of the curve).</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Details</h3>
+
+<p>There are some situations where particles are emitted with random speeds and the smallest particles should also be the ones that move fastest. For example, you would expect small pieces of debris to be accelerated more by an explosion than larger pieces. You can achieve effects like this using <em>Size By Speed</em> with a simple ramp curve that increases the size in proportion to the speed of the particle. (Note that this should not be used with <em>Limit Velocity Over Lifetime</em> unless you are sure you want particles to shrink as they slow down.)</p>
+
+<h2>Rotation Over Lifetime Module</h2>
+
+<p>Here, you can arrange for particles to rotate as they move.</p>
+
+<figure>
+<img src="../uploads/Main/PartSysRotOverLifeInsp.png" alt="">
+<figcaption></figcaption></figure>
+
+<h3>Properties</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Angular Velocity</span></td>
+	<td style="text-align:left;">Rotation velocity in degrees per second.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Details</h3>
+
+<p>This setting is useful when particles represent small solid objects, such as pieces of debris from an explosion. Assigning random values of rotation will make the effect more realistic than having the particles remain upright as they fly. Also, the random rotations will help to break up the regularity of similarly-shaped particles (the same texture repeated many times can be very noticeable).</p>
+
+<h2>Rotation By Speed Module</h2>
+
+<p>The rotation of a particle can be set here to change according to its speed in distance units per second.</p>
+
+<figure>
+<img src="../uploads/Main/PartSysRotBySpeedInsp.png" alt="">
+<figcaption></figcaption></figure>
+
+<h3>Properties</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Angular Velocity</span></td>
+	<td style="text-align:left;">Rotation velocity in degrees per second.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Speed Range</span></td>
+	<td style="text-align:left;">The low and high ends of the speed range to which the size curve is mapped (speeds outside the range will map to the end points of the curve).</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Details</h3>
+
+<p>This property can be used when the particles represent solid objects moving over the ground such as rocks from a landslide. The rotation of the particles can be set in proportion to the speed so that they roll over the surface convincingly.</p>
+
+<h2>External Forces Module</h2>
+
+<p>This property modifies the effect of <span class="doc-keyword">wind zones</span> on particles emitted by the system.</p>
+
+<figure>
+<img src="../uploads/Main/PartSysExtForcesInsp.png" alt="">
+<figcaption></figcaption></figure>
+
+<h3>Properties</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Multiplier</span></td>
+	<td style="text-align:left;">Scale value applied to wind zone forces.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Details</h3>
+
+<p>A <span class="doc-keyword">Terrain</span> can incorporate <em>wind zones</em> which affect the movement of trees on the landscape. Enabling this section allows the wind zones to blow particles from the system. The <em>Multiplier</em> value lets you scale the effect of the wind on the particles, since they will often be blown more strongly than tree branches.</p>
+
+<h2>Collision Module</h2>
+
+<p>This module controls the way particles collide with solid objects in the scene.</p>
+
+<figure>
+<img src="../uploads/Main/PartSysCollisionInsp.png" alt="">
+<figcaption></figcaption></figure>
+
+<h3>Properties</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">World/Planes popup</span></td>
+	<td style="text-align:left;">Selects between <em>World</em> and <em>Planes</em> modes (see below for details).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Planes</span></td>
+	<td style="text-align:left;">An expandable list of Transforms that define collision planes (Planes mode only).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Visualization</span></td>
+	<td style="text-align:left;">Selects whether the collision plane gizmos will be shown in the scene view as wireframe grids or solid planes (Planes mode only).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Scale Plane</span></td>
+	<td style="text-align:left;">Size of planes used for visualization (Planes mode only).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Dampen</span></td>
+	<td style="text-align:left;">The fraction of a particle’s speed that it loses after a collision.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Bounce</span></td>
+	<td style="text-align:left;">The fraction of a particle’s speed that rebounds from a surface after a collision.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Lifetime Loss</span></td>
+	<td style="text-align:left;">The fraction of a particle’s total lifetime that it loses if it collides.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Min Kill Speed</span></td>
+	<td style="text-align:left;">Particles travelling below this speed after a collision will be removed from the system.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Particle Radius</span></td>
+	<td style="text-align:left;">Approximate size of a particle, used to avoid clipping with collision planes (Planes mode only).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Collides With</span></td>
+	<td style="text-align:left;">Particles will only collide with objects on the selected layers (World mode only).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Collision Quality</span></td>
+	<td style="text-align:left;">This affects how “watertight” the collisions are - at lower quality levels, particles may sometimes pass through colliders (World mode only).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Send Collision Messages</span></td>
+	<td style="text-align:left;">If enabled, particle collisions can be detected from scripts by the <code>OnParticleCollision</code> function.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Details</h3>
+
+<p>When other objects surround a particle system, the effect is often more convincing when the particles interact with those objects. For example, water or debris should be obstructed by a solid wall rather than simply passing through it. With <em>Collision</em> enabled, particles can collide with objects in the scene.</p>
+
+<p>A particle system can be set so its particles collide with any collider in the scene by selecting <em>World</em> mode from the popup. (Colliders can also be disabled according to the layer they are on by using the <em>Collides With</em> property.) The popup also has a <em>Planes</em> mode option which allows you to add a set of planes to the scene that don’t need to have colliders. This option is useful for simple floors, walls and similar objects and has a lower processor overhead than <em>World</em> mode. When <em>Planes</em> mode is enabled, a list of transforms (typically empty GameObjects) can be added via the <em>Planes</em> property. The planes extend infinitely in the objects’ local XZ planes with the positive Y axis indicating the planes’ normal vectors. To assist with development, the planes will be shown as gizmos in the scene, regardless of whether or not the objects have any visible mesh themselves. The gizmos can be shown as a wireframe grid or a solid plane, and can also be scaled. However, the scaling only applies to the visualization - the collision planes themselves extend infinitely through the scene.</p>
+
+<p>When collisions are enabled, the size of a particle is sometimes a problem because its graphic can be clipped as it makes contact with a surface. This can result in a particle appearing to “sink” partway into a surface before stopping or bouncing. The <em>Particle Radius</em> property addresses this issue by defining an approximate circular radius for the particles. This size information is used to prevent clipping and avoid the sinking-in effect.</p>
+
+<p>The <em>Dampen</em> and <em>Bounce</em> properties are useful when the particles represent solid objects. For example, gravel will tend to bounce off a hard surface when thrown but a snowball’s particles might lose speed during a collision. <em>Lifetime Loss</em> and <em>Min Kill Speed</em> can help to reduce the effects of residual particles following a collision. For example, a fireball might last for a few seconds while flying through the air but after colliding, the separate fire particles should dissipate quickly.</p>
+
+<p>You can also detect particle collisions from a script if <em>Send Collision Messages</em> is enabled. The script can be attached to the object with the particle system or the one with the collider or both. By detecting collisions, you can use particles as active objects in gameplay, such as projectiles, magic spell and power-ups. See the script reference page for <code>MonoBehaviour.OnParticleCollision</code> for further details and examples.</p>
+
+<h2>Sub Emitters Module</h2>
+
+<p>This module lets you set up <em>sub-emitters</em>. These are additional particle systems that are created at a particle’s position at certain stages of its lifetime.</p>
+
+<figure>
+<img src="../uploads/Main/PartSysSubEmitInsp.png" alt="">
+<figcaption></figcaption></figure>
+
+<h3>Properties</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Birth, Collision, Death</span></td>
+	<td style="text-align:left;">Phases of a particles life where sub-emitters can be created. Two sub-emitters can be added for each phase using the “+” arrows at the right of the inspector.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Details</h3>
+
+<p>Many types of particles produce effects at different stages of their lifetimes that can also be implemented using particle systems. For example, a bullet might be accompanied by a puff of powder smoke as it leaves the gun barrel and a fireball might explode on impact. You can use sub-emitters to create effects like these. The sub-emitters are just ordinary particle system objects created in the scene or from prefabs. This means that sub-emitters can have sub-emitters of their own and this type of arrangement can be useful for complex effects like fireworks. However, it is very easy to generate an enormous number of particles using sub-emitters, so you should take care that performance doesn’t suffer as a result.</p>
+
+<h2>Texture Sheet Animation Module</h2>
+
+<p>A particle’s graphic need not be a still image. This module lets you treat the texture as a grid of separate sub-images that can be played back as frames of animation.</p>
+
+<figure>
+<img src="../uploads/Main/PartSysTexSheetInsp.png" alt="">
+<figcaption></figcaption></figure>
+
+<h3>Properties</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Tiles</span></td>
+	<td style="text-align:left;">The number of tiles the texture will be divided into in the X (horizontal) and Y (vertical) directions.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Animation</span></td>
+	<td style="text-align:left;">The animation mode can be set to <em>Whole Sheet</em> or <em>Single Row</em> (ie, each row of the sheet represents a separate animation sequence).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Random Row</span></td>
+	<td style="text-align:left;">Chooses a row from the sheet at random to produce the animation (only available when <em>Single Row</em> is selected as the animation mode).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Row</span></td>
+	<td style="text-align:left;">Selects a particular row from the sheet to produce the animation (only available when <em>Single Row</em> mode is selected and <em>Random Row</em> is disabled).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Frame Over Time</span></td>
+	<td style="text-align:left;">A curve that specifies how the frame of animation increases as time progresses.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Cycles</span></td>
+	<td style="text-align:left;">The number of times the animation sequence repeats over the particle’s lifetime.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Details</h3>
+
+<p>Particle animations are typically simpler and less detailed than character animations. In systems where the particles are visible individually, animations can be used to convey actions or movements. For example, flames may flicker and insects in a swarm might vibrate or shudder as if flapping their wings. In cases where the particles form a single, continous entity like a cloud, animated particles can help add to the impression of energy and movement.</p>
+
+<p>You can use the <em>Single Row</em> mode to create separate animation sequences for particles and switch between animations from a script. This can be useful for creating variation or switching to a different animation after a collision. The <em>Random Row</em> option is highly effective as a way to break up conspicuous regularity in a particle system (eg, a group of flame objects that are all repeating the exact same flickering animation over and over again). This option can also be used with a single frame per row as a way to generate particles with random graphics. This can be used to break up regularity in a object like a cloud or to produce different types of debris or other objects from a single system. For example, a blunderbuss might fire out a cluster of nails, bolts, balls and other projectiles.</p>
+
+<h2>Renderer Module</h2>
+
+<p>This module’s settings determine how a particle’s image or mesh is transformed, shaded and overdrawn by other particles.</p>
+
+<figure>
+<img src="../uploads/Main/PartSysRendererInsp.png" alt="">
+<figcaption></figcaption></figure>
+
+<h3>Properties</h3>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Render Mode</span></td>
+	<td style="text-align:left;">How the rendered image is produced from the graphic image (or mesh). The options are <span class="doc-prop">Billboard</span> (particle always faces the camera, <span class="doc-prop">Stretched Billboard</span> (faces the camera but with scaling applied), <span class="doc-prop">Horizontal Billboard</span> (particle plane is parallel to the XZ “floor” plane), <span class="doc-prop">Vertical Billboard</span> (particle is upright on the world Y axis but turns to face the camera) and <span class="doc-prop">Mesh</span> (particle is rendered from a 3D mesh instead of a texture).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Camera Scale</span></td>
+	<td style="text-align:left;">The amount of stretching applied in proportion to camera movement (Stretched Billboard mode only).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Speed Scale</span></td>
+	<td style="text-align:left;">The amount of stretching applied in proportion to a particle’s speed (Stretched Billboard mode only).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Length Scale</span></td>
+	<td style="text-align:left;">The amount of stretching applied in proportion to a particle’s length (Stretched Billboard mode only).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Mesh</span></td>
+	<td style="text-align:left;">One or more meshes used to render particles (Mesh mode only).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Normal Direction</span></td>
+	<td style="text-align:left;">Bias of lighting normals used for the particle graphics. A value of 1.0 points the normals at the camera, while a value of 0.0 points them towards the centre of the screen (Billboard modes only).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Material</span></td>
+	<td style="text-align:left;">Material used to render the particle.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Sort Mode</span></td>
+	<td style="text-align:left;">The order in which particles are drawn (and therefore overlaid). The possible values are <span class="doc-prop">By Distance</span> (ie, from camera), <span class="doc-prop">Youngest First</span> and <span class="doc-prop">Oldest First</span>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Sorting Fudge</span></td>
+	<td style="text-align:left;">Bias of particle sort ordering. Lower values increase the relative chance that particles will be drawn over other transparent objects, including particles from other systems.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Cast Shadows</span></td>
+	<td style="text-align:left;">Should the particle cast shadows on other objects? Only opaque materials cast shadows.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Receive Shadows</span></td>
+	<td style="text-align:left;">Should shadows be cast onto particles? Only opaque materials can receive shadows.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Max Particle Size</span></td>
+	<td style="text-align:left;">The largest particle size (regardless of other settings), expressed as a fraction of viewport size.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Details</h3>
+
+<p>The <em>Render Mode</em> lets you choose between several billboard (2D) graphic modes and mesh mode. Using 3D meshes gives particles extra authenticity when they represent solid objects, such as rocks, but can also improve the sense of volume for clouds, fireballs and liquids. When 2D billboard graphics are used, the different options can be used for a variety of effects. The default <em>Billboard</em> mode is good for particles representing volumes that look much the same from any direction (eg, clouds). <em>Horizontal Billboard</em> mode can be used when the particles cover the ground (eg, target indicators and magic spell effects) or when they are flat objects that fly or float parallel to the ground (eg, shurikens). <em>Vertical Billboard</em> mode keeps each particle upright and perpendicular to the XZ plane but allows it to rotate around its Y axis. This can be helpful when you are using an orthographic camera and want particle sizes to stay consistent. <em>Stretched Billboard</em> mode accentuates the apparent speed of particles in a similar way to the “stretch and squash” techniques used by traditional animators.</p>
+
+<p>The <em>Normal Direction</em> can be used to create shading based on the particle’s direction from the center of the screen. This can help create a feeling of size and depth on, say, a cloud - the outer edges of the cloud particles (relative to screen center) will tend to be darkened giving the impression of a volume shaded all over rather than a set of unformly shaded elements.</p>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SL-BuiltinValues.html"></a></span><div class="tip">ShaderLab built-in values</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="comp-ParticlesLegacy.html"></a></span><div class="tip">Particle Systems (Legacy, prior to release 3.5)</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

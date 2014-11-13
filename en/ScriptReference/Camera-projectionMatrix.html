@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html><html lang="en" class="no-js"><head><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Unity - Scripting API: Camera.projectionMatrix</title><meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come." /><meta name="author" content="Unity Technologies" /><link rel="shortcut icon" href="../StaticFiles/images/favicons/favicon.ico" /><link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png" /><link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png" /><link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png" /><link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png" /><link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png" /><script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFiles/js/jquery.js">//jquery</script><script type="text/javascript" src="../StaticFiles/classList.js">//core</script><script type="text/javascript" src="../StaticFiles/js/core.js">//core</script><script type="text/javascript" src="../StaticFiles/js/suggest.js">//suggest</script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css" /><link rel="stylesheet" type="text/css" href="../StaticFiles/css/suggest.css" /><!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="../StaticFiles/css/ie.css" /><![endif]--><!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="../StaticFiles/css/ie7.css" /><![endif]--></head><body><div class="header-wrapper"><div id="header" class="header"><div class="content"><div class="logo"><a href="http://docs.unity3d.com" /></div><ul class="docs-menu"><li><a href="http://docs.unity3d.com">Overview</a></li><li><a href="../Manual/index.html">Manual</a></li><li><a href="../ScriptReference/index.html" class="selected">Scripting API</a></li></ul><div class="more-menu"><div class="box"><div class="label"><a href="http://unity3d.com/learn">Learn</a></div><ul style="display:none;"><li><a href="http://unity3d.com/learn/tutorials/modules">Tutorials</a></li><li><a href="http://unity3d.com/learn/live-training/">Live Training</a></li><li><a href="http://unity3d.com/learn/premium-support">Premium Support</a></li></ul></div><div class="box"><div class="label"><a href="http://unity3d.com/community">Community</a></div><ul style="display:none;"><li><a href="http://forum.unity3d.com/">Forums</a></li><li><a href="http://answers.unity3d.com/">Answers</a></li><li><a href="http://feedback.unity3d.com/">Feedback</a></li><li><a href="http://issuetracker.unity3d.com/">Issue Tracker</a></li></ul></div></div><div class="search"><form action="30_search.html" method="get" class="apisearch"><input type="text" name="q" placeholder="Search" autosave="Unity Reference" results="5" class="sbox field" id="q" /><input type="submit" class="submit" /></form></div></div></div><div class="toolbar"><div class="content"><div class="script-lang"><h4>Script language:</h4><ul><li class="selected" data-lang="JS">JS</li><li data-lang="CS">C#</li><li data-lang="Boo">Boo</li></ul><div id="script-lang-dialog" class="dialog hide"><div class="dialog-header clear"><h5>Script language</h5><div class="close"> </div></div><p>Select your preferred scripting language. All code snippets will be displayed in this language.</p></div></div></div><a class="suggest">Suggest a change</a></div></div><div id="master-wrapper" class="master-wrapper clear"><div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="ruler-t"> </div><div class="ruler-m"> </div><div class="ruler-b"> </div><div class="content"><div class="sidebar-menu"><h2>Scripting API</h2><div class="toc"> </div></div><p><a href="40_history.html" class="cl">History</a></p></div></div></div><div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content"><div class="section"><div class="mb20 clear"><h1 class="heading inherit left"><a href="Camera.html">Camera</a>.projectionMatrix</h1><a href="../Manual/class-Camera.html" class="switch-link gray-btn smallbtn mr0 right">Switch to Manual</a><div class="clear"> </div></div><div class="subsection"><div class="signature"><div class="signature-JS sig-block">public
+      var <span class="sig-kw">projectionMatrix</span>: <a href="Matrix4x4.html">Matrix4x4</a>;
+     </div><div class="signature-CS sig-block">public <a href="Matrix4x4.html">Matrix4x4</a> <span class="sig-kw">projectionMatrix</span>;
+     </div><div class="signature-Boo sig-block">public <span class="sig-kw">projectionMatrix</span> as <a href="Matrix4x4.html">Matrix4x4</a> </div></div></div><div class="subsection"><h2>Description</h2><p>Set a custom projection matrix.</p></div><div class="subsection"><p>If you change this matrix, the camera no longer updates its rendering based on its <a href="Camera-fieldOfView.html">fieldOfView</a>.
+This lasts until you call <a href="Camera.ResetProjectionMatrix.html">ResetProjectionMatrix</a>.<p class="basic" />Use a custom projection only if you really need a non-standard projection.
+This property is used by Unity's water rendering to setup an
+<em>oblique projection</em> matrix. Using custom projections requires good knowledge
+of transformation and projection matrices.</p></div><div class="subsection">
+      <pre class="codeExampleJS">	// Make camera wobble in a funky way!
+	var originalProjection : <a href="Matrix4x4.html">Matrix4x4</a>;
+	originalProjection = camera.projectionMatrix;
+	
+	function Update () {
+		var p : <a href="Matrix4x4.html">Matrix4x4</a> = originalProjection;
+		// change some values from the original matrix
+		p.m01 += <a href="Mathf.Sin.html">Mathf.Sin</a> (<a href="Time-time.html">Time.time</a> * 1.2) * 0.1;
+		p.m10 += <a href="Mathf.Sin.html">Mathf.Sin</a> (<a href="Time-time.html">Time.time</a> * 1.5) * 0.1;
+		camera.projectionMatrix = p;
+	}
+</pre>
+      <pre class="codeExampleCS">using UnityEngine;
+using System.Collections;
+
+public class ExampleClass : <a href="MonoBehaviour.html">MonoBehaviour</a> {
+    public <a href="Matrix4x4.html">Matrix4x4</a> originalProjection;
+    void Update() {
+        <a href="Matrix4x4.html">Matrix4x4</a> p = originalProjection;
+        p.m01 += <a href="Mathf.Sin.html">Mathf.Sin</a>(<a href="Time-time.html">Time.time</a> * 1.2F) * 0.1F;
+        p.m10 += <a href="Mathf.Sin.html">Mathf.Sin</a>(<a href="Time-time.html">Time.time</a> * 1.5F) * 0.1F;
+        camera.projectionMatrix = p;
+    }
+    void Example() {
+        originalProjection = camera.projectionMatrix;
+    }
+}
+</pre>
+      <pre class="codeExampleBoo">import UnityEngine
+import System.Collections
+
+public class ExampleClass(<a href="MonoBehaviour.html">MonoBehaviour</a>):
+
+	public originalProjection as <a href="Matrix4x4.html">Matrix4x4</a>
+
+	def Update() as void:
+		p as <a href="Matrix4x4.html">Matrix4x4</a> = originalProjection
+		p.m01 += (<a href="Mathf.Sin.html">Mathf.Sin</a>((<a href="Time-time.html">Time.time</a> * 1.2F)) * 0.1F)
+		p.m10 += (<a href="Mathf.Sin.html">Mathf.Sin</a>((<a href="Time-time.html">Time.time</a> * 1.5F)) * 0.1F)
+		camera.projectionMatrix = p
+
+	def Example() as void:
+		originalProjection = camera.projectionMatrix
+
+</pre>
+    </div><div class="subsection">
+      <pre class="codeExampleJS">	// Set an off-center projection, where perspective's vanishing
+	// point is not necessarily in the center of the screen.
+	//
+	// left/right/top/bottom define near plane size, i.e.
+	// how offset are corners of camera's near plane.
+	// Tweak the values and you can see camera's frustum change.<p class="basic" />	@script <a href="ExecuteInEditMode.html">ExecuteInEditMode</a><p class="basic" />	var left : float = -0.2;
+	var right : float = 0.2;
+	var top : float = 0.2;
+	var bottom : float = -0.2;<p class="basic" />	function LateUpdate () {
+		var cam : <a href="Camera.html">Camera</a> = camera;
+		var m : <a href="Matrix4x4.html">Matrix4x4</a> = PerspectiveOffCenter(
+			left, right, bottom, top,
+			cam.nearClipPlane, cam.farClipPlane );
+		cam.projectionMatrix = m;
+	}<p class="basic" />	static function PerspectiveOffCenter(
+		left : float, right : float,
+		bottom : float, top : float,
+		near : float, far : float ) : <a href="Matrix4x4.html">Matrix4x4</a>
+	{        
+		var x : float =  (2.0 * near) / (right - left);
+		var y : float =  (2.0 * near) / (top - bottom);
+		var a : float =  (right + left) / (right - left);
+		var b : float =  (top + bottom) / (top - bottom);
+		var c : float = -(far + near) / (far - near);
+		var d : float = -(2.0 * far * near) / (far - near);
+		var e : float = -1.0;<p class="basic" />		var m : <a href="Matrix4x4.html">Matrix4x4</a> = new <a href="Matrix4x4.html">Matrix4x4</a>();
+		m[0,0] = x;  m[0,1] = 0;  m[0,2] = a;  m[0,3] = 0;
+		m[1,0] = 0;  m[1,1] = y;  m[1,2] = b;  m[1,3] = 0;
+		m[2,0] = 0;  m[2,1] = 0;  m[2,2] = c;  m[2,3] = d;
+		m[3,0] = 0;  m[3,1] = 0;  m[3,2] = e;  m[3,3] = 0;
+		return m;
+	}
+</pre>
+      <pre class="codeExampleCS">using UnityEngine;
+using System.Collections;
+
+[<a href="ExecuteInEditMode.html">ExecuteInEditMode</a>]
+public class ExampleClass : <a href="MonoBehaviour.html">MonoBehaviour</a> {
+    public float left = -0.2F;
+    public float right = 0.2F;
+    public float top = 0.2F;
+    public float bottom = -0.2F;
+    void LateUpdate() {
+        <a href="Camera.html">Camera</a> cam = camera;
+        <a href="Matrix4x4.html">Matrix4x4</a> m = PerspectiveOffCenter(left, right, bottom, top, cam.nearClipPlane, cam.farClipPlane);
+        cam.projectionMatrix = m;
+    }
+    static <a href="Matrix4x4.html">Matrix4x4</a> PerspectiveOffCenter(float left, float right, float bottom, float top, float near, float far) {
+        float x = 2.0F * near / (right - left);
+        float y = 2.0F * near / (top - bottom);
+        float a = (right + left) / (right - left);
+        float b = (top + bottom) / (top - bottom);
+        float c = -(far + near) / (far - near);
+        float d = -(2.0F * far * near) / (far - near);
+        float e = -1.0F;
+        <a href="Matrix4x4.html">Matrix4x4</a> m = new <a href="Matrix4x4.html">Matrix4x4</a>();
+        m[0, 0] = x;
+        m[0, 1] = 0;
+        m[0, 2] = a;
+        m[0, 3] = 0;
+        m[1, 0] = 0;
+        m[1, 1] = y;
+        m[1, 2] = b;
+        m[1, 3] = 0;
+        m[2, 0] = 0;
+        m[2, 1] = 0;
+        m[2, 2] = c;
+        m[2, 3] = d;
+        m[3, 0] = 0;
+        m[3, 1] = 0;
+        m[3, 2] = e;
+        m[3, 3] = 0;
+        return m;
+    }
+}
+</pre>
+      <pre class="codeExampleBoo">import UnityEngine
+import System.Collections
+
+[<a href="ExecuteInEditMode.html">ExecuteInEditMode</a>]
+public class ExampleClass(<a href="MonoBehaviour.html">MonoBehaviour</a>):
+
+	public left as float = (-0.2F)
+
+	public right as float = 0.2F
+
+	public top as float = 0.2F
+
+	public bottom as float = (-0.2F)
+
+	def LateUpdate() as void:
+		cam as <a href="Camera.html">Camera</a> = camera
+		m as <a href="Matrix4x4.html">Matrix4x4</a> = PerspectiveOffCenter(left, right, bottom, top, cam.nearClipPlane, cam.farClipPlane)
+		cam.projectionMatrix = m
+
+	static def PerspectiveOffCenter(left as float, right as float, bottom as float, top as float, near as float, far as float) as <a href="Matrix4x4.html">Matrix4x4</a>:
+		x as float = ((2.0F * near) / (right - left))
+		y as float = ((2.0F * near) / (top - bottom))
+		a as float = ((right + left) / (right - left))
+		b as float = ((top + bottom) / (top - bottom))
+		c as float = ((-(far + near)) / (far - near))
+		d as float = ((-((2.0F * far) * near)) / (far - near))
+		e as float = (-1.0F)
+		m as <a href="Matrix4x4.html">Matrix4x4</a> = <a href="Matrix4x4.html">Matrix4x4</a>()
+		m[0, 0] = x
+		m[0, 1] = 0
+		m[0, 2] = a
+		m[0, 3] = 0
+		m[1, 0] = 0
+		m[1, 1] = y
+		m[1, 2] = b
+		m[1, 3] = 0
+		m[2, 0] = 0
+		m[2, 1] = 0
+		m[2, 2] = c
+		m[2, 3] = d
+		m[3, 0] = 0
+		m[3, 1] = 0
+		m[3, 2] = e
+		m[3, 3] = 0
+		return m
+
+</pre>
+    </div></div></div></div></div></div><div class="footer-wrapper"><div class="footer clear"><div class="copy">Copyright © 2014 Unity Technologies</div><div class="menu"><a href="http://unity3d.com/unity">Unity</a><a href="http://unity3d.com/gallery">Gallery</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a></div></div></div><div class="suggestform_background"><div class="suggestform"><div class="suggestline"><div class="suggestlabel">Your name (optional):</div></div><div class="suggestline"><input id="suggest_username" type="text" /></div><div class="suggestline"><div class="suggestlabel">Your email (optional):</div></div><div class="suggestline"><input id="suggest_useremail" type="text" /></div>
+	Please write your suggestion here:
+	<div class="suggestline"><textarea id="suggest_body"> </textarea></div><div class="suggestline"><button id="suggest_submit">Submit</button><button id="suggest_cancel">Cancel</button></div></div></div><script type="text/javascript">
+suggest_form();
+</script></body></html>

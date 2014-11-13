@@ -1,0 +1,219 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Unity Remote 4</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="../StaticFilesManual/js/toc_en.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/UnityRemote4.html">English</a></li>
+<li><a href="/es/current/Manual/UnityRemote4.html">Español</a></li>
+<li><a href="/ru/current/Manual/UnityRemote4.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="PlatformSpecific.html">Platform Specific</a></li>
+<li><a href="iphone.html">iOS</a></li>
+<li>iOS Advanced Topics</li>
+<li>Unity Remote 4</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="iphone-Hardware.html"></a></span><div class="tip">iOS Hardware Guide</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="unity-remote.html"></a></span><div class="tip">Unity Remote 3 (DEPRECATED)</div>
+</div>
+</div></div>
+<h1>Unity Remote 4</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Unity Remote 4 (further refered to as Unity Remote) is an application that allows you to use your target device as a remote control for your project in Unity editor. This is useful during development since it is much quicker to test your project in the editor with remote control than to build and deploy it to the device after each change.</p>
+
+<h2>What is the difference between Unity Remote 4 and old Unity Remote 3/Android Remote?</h2>
+
+<p>Unity Remote 4 is a completely rewritten replacement for old Unity Remote 3 and Android Remote, which unifies different platforms with a single implementation and also adds new features. We are phasing out old Unity Remote 3 and Android Remote for iOS and Android, and will remove them in the future.</p>
+
+<h2>What devices does Unity Remote support?</h2>
+
+<p>Currently Unity Remote supports these devices:</p>
+
+<ul>
+<li>
+<strong>Android</strong> (through USB, on Windows and OSX)</li>
+<li>
+<strong>iOS</strong>: iPhone, iPad, iPod touch (through USB, on Windows and OSX; requires iTunes)</li>
+</ul>
+
+<h2>What features does Unity Remote support?</h2>
+
+<p>The following data from device is streamed back to the editor:</p>
+
+<ul>
+<li>Touch input</li>
+<li>Accelerometer</li>
+<li>Gyroscope</li>
+<li>Device camera streams</li>
+</ul>
+
+<h2>Where can I find Unity Remote?</h2>
+
+<p>Unity Remote can be downloaded for free from the following links:</p>
+
+<ul>
+<li>Unity Project (requires custom building): <a href="https://www.assetstore.unity3d.com/#/publisher/1">Asset Store</a>
+</li>
+<li>Android App: <a href="https://play.google.com/store/apps/details?id=com.unity3d.genericremote">Google Play</a>
+</li>
+<li>iOS App: <a href="https://itunes.apple.com/us/app/unity-remote-4/id871767552">App Store</a>
+</li>
+</ul>
+
+<h2>How do I use Unity Remote?</h2>
+
+<p>Follow these steps:</p>
+
+<ul>
+<li>Download, install and run Unity Remote app in your device.</li>
+<li>Connect your device to your computer using USB cable.</li>
+<li>In editor go to Edit-&gt;Project Settings-&gt;Editor and under Unity Remote select what device to use.</li>
+<li>In editor click Play button to start your game.</li>
+</ul>
+
+<p>At this point editor automatically connects to Unity Remote app and will start streaming video output to device, as well as receiving input from device.</p>
+
+<p>Note: to use Remote with iOS, editor requires iTunes to be installed on your PC.</p>
+
+<h2>Can I connect more than one device?</h2>
+
+<p>Currently Unity Remote doesn’t support multiple connected devices of the same kind (ie two iPhones or two Androids), and it will automatically pick the first device it finds. But it’s fine to have one iOS and one Android device connected at the same time, and select which device to use in Edit-&gt;Project Settings-&gt;Editor under Unity Remote settings before pressing Play button.</p>
+
+<h2>I’m getting really poor graphics quality when running my game in Unity Remote. What can I do to improve it?</h2>
+
+<p>When you use Unity Remote, the game actually runs in the Unity editor while its visual content is streamed to the target device. Since the bandwidth between editor and device is limited, the stream is compressed and you will see unavoidable artifacts. There is no way to change that. Unity Remote’s purpose is for a quick approximate check of how your game would feel like when run on the device and for other quick tests. For real experience use the usual means to build and deploy the app on the device (use <span class="doc-menu">File-&gt;Build &amp; Run</span> in the Unity editor).</p>
+
+<h2>Editor doesn’t connect to iOS device. What can I do?</h2>
+
+<p>First, make sure you have installed latest iTunes (also note that it already comes with default OSX installation, but needs a manual install on Windows).</p>
+
+<p>To establish connection to iOS device through USB, Unity uses a 3rd party utility (iproxy) which sometimes misbehaves and Unity is unable to detect that. You can try the following to fix the problem:</p>
+
+<ul>
+<li>Reconnect iOS device.</li>
+<li>Restart iOS device.</li>
+<li>Go to Edit-&gt;Project Settings-&gt;Editor and under Unity Remote select Any Android Device and back to Any iOS Device.</li>
+<li>Restart Unity editor.</li>
+<li>Exit Unity editor, and terminate all “unityiproxy” processes. (For OSX open command line and execute “killall unityiproxy”. For Windows open Task Manager (Ctrl+Shift+Esc) and terminate all “unityiproxy” processes). Launch the editor again. (Especially in cases after editor crashes).</li>
+</ul>
+
+<p>In most cases reconnecting or restarting iOS device is sufficient to fix the problem.</p>
+
+<h2>Editor doesn’t connect to iOS device on Windows. What can I do?</h2>
+
+<p>Make sure you have installed latest iTunes. If that still doesn’t help, then see “Editor doesn’t connect to iOS device. What can I do?” section above.</p>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="iphone-Hardware.html"></a></span><div class="tip">iOS Hardware Guide</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="unity-remote.html"></a></span><div class="tip">Unity Remote 3 (DEPRECATED)</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

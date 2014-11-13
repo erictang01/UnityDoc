@@ -1,0 +1,46 @@
+.suggest {
+float: right;
+display: block;
+padding: 0.5em;
+cursor: pointer;
+}
+
+.suggestform_background {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: none;
+	z-index: 400;
+	background-color: rgba(0,0,0, 0.3);
+}
+
+.suggestform {
+    border: 1px solid #777;
+	background-color: #ddd;
+	position: absolute;
+	width: 300px;
+	top: 100px;
+	right: 100px;
+	
+	padding: 0.5em;
+	font-size: 80%;
+}
+
+.suggestline {
+	width: 100%;
+	margin-bottom: 0.5em;
+}
+
+.suggestlabel {
+}
+
+.suggestform input, .suggestform textarea {
+	width: 100%;
+	padding: 0;
+}
+
+#suggest_body {
+	height: 100px;
+}

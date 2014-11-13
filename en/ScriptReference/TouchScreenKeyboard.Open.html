@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html><html lang="en" class="no-js"><head><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Unity - Scripting API: TouchScreenKeyboard.Open</title><meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come." /><meta name="author" content="Unity Technologies" /><link rel="shortcut icon" href="../StaticFiles/images/favicons/favicon.ico" /><link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png" /><link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png" /><link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png" /><link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png" /><link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png" /><script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFiles/js/jquery.js">//jquery</script><script type="text/javascript" src="../StaticFiles/classList.js">//core</script><script type="text/javascript" src="../StaticFiles/js/core.js">//core</script><script type="text/javascript" src="../StaticFiles/js/suggest.js">//suggest</script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css" /><link rel="stylesheet" type="text/css" href="../StaticFiles/css/suggest.css" /><!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="../StaticFiles/css/ie.css" /><![endif]--><!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="../StaticFiles/css/ie7.css" /><![endif]--></head><body><div class="header-wrapper"><div id="header" class="header"><div class="content"><div class="logo"><a href="http://docs.unity3d.com" /></div><ul class="docs-menu"><li><a href="http://docs.unity3d.com">Overview</a></li><li><a href="../Manual/index.html">Manual</a></li><li><a href="../ScriptReference/index.html" class="selected">Scripting API</a></li></ul><div class="more-menu"><div class="box"><div class="label"><a href="http://unity3d.com/learn">Learn</a></div><ul style="display:none;"><li><a href="http://unity3d.com/learn/tutorials/modules">Tutorials</a></li><li><a href="http://unity3d.com/learn/live-training/">Live Training</a></li><li><a href="http://unity3d.com/learn/premium-support">Premium Support</a></li></ul></div><div class="box"><div class="label"><a href="http://unity3d.com/community">Community</a></div><ul style="display:none;"><li><a href="http://forum.unity3d.com/">Forums</a></li><li><a href="http://answers.unity3d.com/">Answers</a></li><li><a href="http://feedback.unity3d.com/">Feedback</a></li><li><a href="http://issuetracker.unity3d.com/">Issue Tracker</a></li></ul></div></div><div class="search"><form action="30_search.html" method="get" class="apisearch"><input type="text" name="q" placeholder="Search" autosave="Unity Reference" results="5" class="sbox field" id="q" /><input type="submit" class="submit" /></form></div></div></div><div class="toolbar"><div class="content"><div class="script-lang"><h4>Script language:</h4><ul><li class="selected" data-lang="JS">JS</li><li data-lang="CS">C#</li><li data-lang="Boo">Boo</li></ul><div id="script-lang-dialog" class="dialog hide"><div class="dialog-header clear"><h5>Script language</h5><div class="close"> </div></div><p>Select your preferred scripting language. All code snippets will be displayed in this language.</p></div></div></div><a class="suggest">Suggest a change</a></div></div><div id="master-wrapper" class="master-wrapper clear"><div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="ruler-t"> </div><div class="ruler-m"> </div><div class="ruler-b"> </div><div class="content"><div class="sidebar-menu"><h2>Scripting API</h2><div class="toc"> </div></div><p><a href="40_history.html" class="cl">History</a></p></div></div></div><div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content"><div class="section"><div class="mb20 clear"><h1 class="heading inherit left"><a href="TouchScreenKeyboard.html">TouchScreenKeyboard</a>.Open</h1><div class="clear"> </div></div><div class="subsection"><div class="signature"><div class="signature-JS sig-block">public static function <span class="sig-kw">Open</span>(<span class="sig-kw">text</span>:
+string,
+<span class="sig-kw">keyboardType</span>: <a href="TouchScreenKeyboardType.html">TouchScreenKeyboardType</a> = TouchScreenKeyboardType.Default,
+<span class="sig-kw">autocorrection</span>: bool = true,
+<span class="sig-kw">multiline</span>: bool = false,
+<span class="sig-kw">secure</span>: bool = false,
+<span class="sig-kw">alert</span>: bool = false,
+<span class="sig-kw">textPlaceholder</span>: string = ""):
+        <a href="TouchScreenKeyboard.html">TouchScreenKeyboard</a>;
+       </div><div class="signature-CS sig-block">public static <a href="TouchScreenKeyboard.html">TouchScreenKeyboard </a><span class="sig-kw">Open</span>(string <span class="sigKW">text</span>,
+<a href="TouchScreenKeyboardType.html">TouchScreenKeyboardType </a><span class="sig-kw">keyboardType</span> = TouchScreenKeyboardType.Default,
+bool <span class="sig-kw">autocorrection</span> = true,
+bool <span class="sig-kw">multiline</span> = false,
+bool <span class="sig-kw">secure</span> = false,
+bool <span class="sig-kw">alert</span> = false,
+string <span class="sig-kw">textPlaceholder</span> = "");
+     </div><div class="signature-Boo sig-block">public static
+      def <span class="sig-kw">Open</span>(<span class="sig-kw">text</span> as string,
+ <span class="sig-kw">keyboardType</span> as <a href="TouchScreenKeyboardType.html">TouchScreenKeyboardType</a> = TouchScreenKeyboardType.Default,
+ <span class="sig-kw">autocorrection</span> as bool = true,
+ <span class="sig-kw">multiline</span> as bool = false,
+ <span class="sig-kw">secure</span> as bool = false,
+ <span class="sig-kw">alert</span> as bool = false,
+ <span class="sig-kw">textPlaceholder</span> as string = "")
+      
+        as <a href="TouchScreenKeyboard.html">TouchScreenKeyboard</a> </div><div class="signature-JS sig-block"> </div><div class="signature-CS sig-block"> </div><div class="signature-Boo sig-block"> </div><div class="signature-JS sig-block"> </div><div class="signature-CS sig-block"> </div><div class="signature-Boo sig-block"> </div><div class="signature-JS sig-block"> </div><div class="signature-CS sig-block"> </div><div class="signature-Boo sig-block"> </div><div class="signature-JS sig-block"> </div><div class="signature-CS sig-block"> </div><div class="signature-Boo sig-block"> </div><div class="signature-JS sig-block"> </div><div class="signature-CS sig-block"> </div><div class="signature-Boo sig-block"> </div><div class="signature-JS sig-block"> </div><div class="signature-CS sig-block"> </div><div class="signature-Boo sig-block"> </div></div></div><div class="subsection"><h2>Parameters</h2><table class="list"><tr><td class="name lbl">text</td><td class="desc">Text to edit.</td></tr><tr><td class="name lbl">keyboardType</td><td class="desc">Type of keyboard (eg, any text, numbers only, etc).</td></tr><tr><td class="name lbl">autocorrection</td><td class="desc">Is autocorrection applied?</td></tr><tr><td class="name lbl">multiline</td><td class="desc">Can more than one line of text be entered?</td></tr><tr><td class="name lbl">secure</td><td class="desc">Is the text masked (for passwords, etc)?</td></tr><tr><td class="name lbl">alert</td><td class="desc">Is the keyboard opened in alert mode?</td></tr><tr><td class="name lbl">textPlaceholder</td><td class="desc">Text to be used if no other text is present.</td></tr></table></div><div class="subsection"><h2>Description</h2><p>Opens the native keyboard provided by OS on the screen.</p></div><div class="subsection"><p>The <code class="varname">autocorrection</code> determines whether the input tracks unknown words
+and suggests a more suitable replacement candidate to the user,
+replacing the typed text automatically unless the user explicitly
+overrides the action.
+The <code class="varname">multiline</code> determines if user can input more than one line of
+text.
+The <code class="varname">secure</code> identifies whether the keyboard is used for password. Text
+in the input field will be hidden from the user except the recently
+typed character.
+The keyboard can be opened in the <code class="varname">alert</code> mode too.
+The <code class="varname">placeholder</code> string will be displayed when there is no other text
+in the input field of the keyboard.</p></div><div class="subsection">
+      <pre class="codeExampleJS">	var inputURL : <a href="String.html">String</a> = "http://www.unity3d.com";
+	private var keyboard : <a href="TouchScreenKeyboard.html">TouchScreenKeyboard</a>;
+	// Opens native keyboard optimized for URL entry
+	function OnGUI() {
+		if (<a href="GUI.Button.html">GUI.Button</a>(<a href="Rect.html">Rect</a>(0, 10, 200, 32), inputURL))
+			keyboard = <a href="TouchScreenKeyboard.Open.html">TouchScreenKeyboard.Open</a>(inputURL, <a href="TouchScreenKeyboardType.URL.html">TouchScreenKeyboardType.URL</a>);<p class="basic" />		if (keyboard)
+			inputURL = keyboard.text;
+		}
+</pre>
+      <pre class="codeExampleCS">using UnityEngine;
+using System.Collections;
+
+public class ExampleClass : <a href="MonoBehaviour.html">MonoBehaviour</a> {
+    public string inputURL = "http://www.unity3d.com";
+    private <a href="TouchScreenKeyboard.html">TouchScreenKeyboard</a> keyboard;
+    void OnGUI() {
+        if (<a href="GUI.Button.html">GUI.Button</a>(new <a href="Rect.html">Rect</a>(0, 10, 200, 32), inputURL))
+            keyboard = <a href="TouchScreenKeyboard.Open.html">TouchScreenKeyboard.Open</a>(inputURL, <a href="TouchScreenKeyboardType.URL.html">TouchScreenKeyboardType.URL</a>);
+        
+        if (keyboard)
+            inputURL = keyboard.text;
+        
+    }
+}
+</pre>
+      <pre class="codeExampleBoo">import UnityEngine
+import System.Collections
+
+public class ExampleClass(<a href="MonoBehaviour.html">MonoBehaviour</a>):
+
+	public inputURL as string = 'http://www.unity3d.com'
+
+	private keyboard as <a href="TouchScreenKeyboard.html">TouchScreenKeyboard</a>
+
+	def OnGUI() as void:
+		if <a href="GUI.Button.html">GUI.Button</a>(<a href="Rect.html">Rect</a>(0, 10, 200, 32), inputURL):
+			keyboard = <a href="TouchScreenKeyboard.Open.html">TouchScreenKeyboard.Open</a>(inputURL, <a href="TouchScreenKeyboardType.URL.html">TouchScreenKeyboardType.URL</a>)
+		if keyboard:
+			inputURL = keyboard.text
+
+</pre>
+    </div></div></div></div></div></div><div class="footer-wrapper"><div class="footer clear"><div class="copy">Copyright © 2014 Unity Technologies</div><div class="menu"><a href="http://unity3d.com/unity">Unity</a><a href="http://unity3d.com/gallery">Gallery</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a></div></div></div><div class="suggestform_background"><div class="suggestform"><div class="suggestline"><div class="suggestlabel">Your name (optional):</div></div><div class="suggestline"><input id="suggest_username" type="text" /></div><div class="suggestline"><div class="suggestlabel">Your email (optional):</div></div><div class="suggestline"><input id="suggest_useremail" type="text" /></div>
+	Please write your suggestion here:
+	<div class="suggestline"><textarea id="suggest_body"> </textarea></div><div class="suggestline"><button id="suggest_submit">Submit</button><button id="suggest_cancel">Cancel</button></div></div></div><script type="text/javascript">
+suggest_form();
+</script></body></html>

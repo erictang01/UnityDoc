@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html><html lang="en" class="no-js"><head><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Unity - Scripting API: MenuItem</title><meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come." /><meta name="author" content="Unity Technologies" /><link rel="shortcut icon" href="../StaticFiles/images/favicons/favicon.ico" /><link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png" /><link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png" /><link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png" /><link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png" /><link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png" /><script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFiles/js/jquery.js">//jquery</script><script type="text/javascript" src="../StaticFiles/classList.js">//core</script><script type="text/javascript" src="../StaticFiles/js/core.js">//core</script><script type="text/javascript" src="../StaticFiles/js/suggest.js">//suggest</script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css" /><link rel="stylesheet" type="text/css" href="../StaticFiles/css/suggest.css" /><!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="../StaticFiles/css/ie.css" /><![endif]--><!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="../StaticFiles/css/ie7.css" /><![endif]--></head><body><div class="header-wrapper"><div id="header" class="header"><div class="content"><div class="logo"><a href="http://docs.unity3d.com" /></div><ul class="docs-menu"><li><a href="http://docs.unity3d.com">Overview</a></li><li><a href="../Manual/index.html">Manual</a></li><li><a href="../ScriptReference/index.html" class="selected">Scripting API</a></li></ul><div class="more-menu"><div class="box"><div class="label"><a href="http://unity3d.com/learn">Learn</a></div><ul style="display:none;"><li><a href="http://unity3d.com/learn/tutorials/modules">Tutorials</a></li><li><a href="http://unity3d.com/learn/live-training/">Live Training</a></li><li><a href="http://unity3d.com/learn/premium-support">Premium Support</a></li></ul></div><div class="box"><div class="label"><a href="http://unity3d.com/community">Community</a></div><ul style="display:none;"><li><a href="http://forum.unity3d.com/">Forums</a></li><li><a href="http://answers.unity3d.com/">Answers</a></li><li><a href="http://feedback.unity3d.com/">Feedback</a></li><li><a href="http://issuetracker.unity3d.com/">Issue Tracker</a></li></ul></div></div><div class="search"><form action="30_search.html" method="get" class="apisearch"><input type="text" name="q" placeholder="Search" autosave="Unity Reference" results="5" class="sbox field" id="q" /><input type="submit" class="submit" /></form></div></div></div><div class="toolbar"><div class="content"><div class="script-lang"><h4>Script language:</h4><ul><li class="selected" data-lang="JS">JS</li><li data-lang="CS">C#</li><li data-lang="Boo">Boo</li></ul><div id="script-lang-dialog" class="dialog hide"><div class="dialog-header clear"><h5>Script language</h5><div class="close"> </div></div><p>Select your preferred scripting language. All code snippets will be displayed in this language.</p></div></div></div><a class="suggest">Suggest a change</a></div></div><div id="master-wrapper" class="master-wrapper clear"><div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="ruler-t"> </div><div class="ruler-m"> </div><div class="ruler-b"> </div><div class="content"><div class="sidebar-menu"><h2>Scripting API</h2><div class="toc"> </div></div><p><a href="40_history.html" class="cl">History</a></p></div></div></div><div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content"><div class="section"><div class="mb20 clear"><h1 class="heading inherit left">MenuItem</h1><div class="clear"> </div><p class="cl mb0 left mr10">Namespace: UnityEditor</p></div><div class="subsection"><div class="signature"><div class="signature-JS sig-block"> </div><div class="signature-CS sig-block"> </div><div class="signature-Boo sig-block"> </div></div></div><div class="subsection"><h2>Description</h2><p>The MenuItem attribute allows you to add menu items to the main menu and inspector context menus.</p></div><div class="subsection"><p>The MenuItem attribute turns any static function into a menu command. Only static functions can use the MenuItem attribute.<p class="basic" />To create a hotkey you can use the following special characters: <strong>%</strong> (ctrl on Windows, cmd on OS X), <strong>#</strong> (shift), <strong>&amp;</strong> (alt), &lt;b&gt;_&lt;/b&gt; (no key modifiers). For example to create a menu with hotkey shift-alt-g use <code class="tt">"MyMenu/Do Something #&amp;g"</code>. To create a menu with hotkey <strong>g</strong> and no key modifiers pressed use <code class="tt">"MyMenu/Do Something _g"</code>.<p class="basic" />Some special keyboard keys are supported as hotkeys, for example "#LEFT" would map to shift-left. The keys supported like this are: LEFT, RIGHT, UP, DOWN, F1 .. F12, HOME, END, PGUP, PGDN.<p class="basic" />A hotkey text must be preceded with a space character (<code class="tt">"MyMenu/Do_g"</code> won't be interpreted as hotkey, while <code class="tt">"MyMenu/Do _g"</code> will).<p class="basic" />When adding menu items to the "GameObject/" menu for creating custom game objects be sure to call <a href="GameObjectUtility.SetParentAndAlign.html">GameObjectUtility.SetParentAndAlign</a> to ensure that the new GameObject is reparented correctly in the case of a context click (see example below). Your function should also call <a href="Undo.RegisterCreatedObjectUndo.html">Undo.RegisterCreatedObjectUndo</a> to make the creation undoable and set <a href="Selection-activeObject.html">Selection.activeObject</a> to the newly created object. Also note that in order for a menu item in "GameObject/" to be propagated to the hierarchy Create dropdown and hierarchy context menu, it must be grouped with the other GameObject creation menu items. This can be achieved by setting its priority to 10 (see example below). Note that for legacy purposes MenuItems in "GameObject/Create Other" with no explicit priority set will receive a priority of 10 instead of the default 1000 - we encourage using a more descriptive category name than "Create Other" and explicitly setting the priority to 10.</p></div><div class="subsection">
+      <pre class="codeExampleRaw">// JavaScript example:<p class="basic" />// Add a menu item named "Do Something" to MyMenu in the menu bar.
+@MenuItem ("MyMenu/Do Something")
+static function DoSomething () {
+	<a href="Debug.Log.html">Debug.Log</a> ("Doing Something...");
+}<p class="basic" />
+// Validated menu item.
+// Add a menu item named "Log Selected <a href="Transform.html">Transform</a> Name" to MyMenu in the menu bar.
+// We use a second function to validate the menu item
+// so it will only be enabled if we have a transform selected.
+@MenuItem ("MyMenu/Log Selected <a href="Transform.html">Transform</a> Name")
+static function LogSelectedTransformName () {
+	<a href="Debug.Log.html">Debug.Log</a> ("Selected <a href="Transform.html">Transform</a> is on " + Selection.activeTransform.gameObject.name + ".");
+}<p class="basic" />// Validate the menu item defined by the function above.
+// The menu item will be disabled if this function returns false.
+@MenuItem ("MyMenu/Log Selected <a href="Transform.html">Transform</a> Name", true)
+static function ValidateLogSelectedTransformName () {
+	// Return false if no transform is selected.
+	return <a href="Selection-activeTransform.html">Selection.activeTransform</a> != null;
+}<p class="basic" />
+// Add a menu item named "Do Something with a Shortcut Key" to MyMenu in the menu bar
+// and give it a shortcut (ctrl-g on Windows, cmd-g on OS X).
+@MenuItem ("MyMenu/Do Something with a Shortcut Key %g")
+static function DoSomethingWithAShortcutKey () {
+	<a href="Debug.Log.html">Debug.Log</a> ("Doing something with a Shortcut Key...");
+}<p class="basic" />
+// Add a menu item called "Double Mass" to a Rigidbody's context menu.
+@MenuItem ("CONTEXT/Rigidbody/Double Mass")
+static function DoubleMassFromContext (command : <a href="MenuCommand.html">MenuCommand</a>) {
+	var body : <a href="Rigidbody.html">Rigidbody</a> = command.context;
+	body.mass = body.mass * 2;
+	<a href="Debug.Log.html">Debug.Log</a> ("Doubled Rigidbody's Mass to " + body.mass + " from Context Menu.");
+}<p class="basic" />// Add a menu item called "Double Mass" to a Rigidbody's context menu.
+@MenuItem ("GameObject/MyCategory/Custom Game Object", false, 1)
+static function CreateCustomGameObject(menuCommand : <a href="MenuCommand.html">MenuCommand</a>) {
+	var go : <a href="GameObject.html">GameObject</a> =  new <a href="GameObject.html">GameObject</a>("Custom Game Object");
+	// Ensure it gets reparented if this was a context click (otherwise does nothing)
+	<a href="GameObjectUtility.SetParentAndAlign.html">GameObjectUtility.SetParentAndAlign</a>(go, menuCommand.context as <a href="GameObject.html">GameObject</a>);
+	// Register the creation in the undo system
+	<a href="Undo.RegisterCreatedObjectUndo.html">Undo.RegisterCreatedObjectUndo</a>(go, "Create " + go.name);
+	<a href="Selection-activeObject.html">Selection.activeObject</a> = go;
+}<p class="basic" />// Add a menu item to create custom GameObjects.
+// Priority 1 ensures it is grouped with the other menu items of the same kind
+// and propagated to the hierarchy dropdown and hierarch context menus. 
+@MenuItem ("GameObject/MyCategory/Custom Game Object", false, 10)
+static function CreateCustomGameObject(menuCommand : <a href="MenuCommand.html">MenuCommand</a>) {
+	var go : <a href="GameObject.html">GameObject</a> =  new <a href="GameObject.html">GameObject</a>("Custom Game Object");
+	// Ensure it gets reparented if this was a context click (otherwise does nothing)
+	<a href="GameObjectUtility.SetParentAndAlign.html">GameObjectUtility.SetParentAndAlign</a>(go, menuCommand.context as <a href="GameObject.html">GameObject</a>);
+	// Register the creation in the undo system
+	<a href="Undo.RegisterCreatedObjectUndo.html">Undo.RegisterCreatedObjectUndo</a>(go, "Create " + go.name);
+	<a href="Selection-activeObject.html">Selection.activeObject</a> = go;
+}
+</pre>
+    </div><div class="subsection">
+      <pre class="codeExampleRaw">// C# example:
+using UnityEditor;
+using UnityEngine;
+public class MenuTest : <a href="MonoBehaviour.html">MonoBehaviour</a> {<p class="basic" />	// Add a menu item named "Do Something" to MyMenu in the menu bar.
+	[<a href="MenuItem.html">MenuItem</a> ("MyMenu/Do Something")]
+	static void DoSomething () {
+		<a href="Debug.Log.html">Debug.Log</a> ("Doing Something...");
+	}<p class="basic" />
+	// Validated menu item.
+	// Add a menu item named "Log Selected <a href="Transform.html">Transform</a> Name" to MyMenu in the menu bar.
+	// We use a second function to validate the menu item
+	// so it will only be enabled if we have a transform selected.
+	[<a href="MenuItem.html">MenuItem</a> ("MyMenu/Log Selected <a href="Transform.html">Transform</a> Name")]
+	static void LogSelectedTransformName ()
+	{
+		<a href="Debug.Log.html">Debug.Log</a> ("Selected <a href="Transform.html">Transform</a> is on " + Selection.activeTransform.gameObject.name + ".");
+	}<p class="basic" />	// Validate the menu item defined by the function above.
+	// The menu item will be disabled if this function returns false.
+	[<a href="MenuItem.html">MenuItem</a> ("MyMenu/Log Selected <a href="Transform.html">Transform</a> Name", true)]
+	static bool ValidateLogSelectedTransformName () {
+		// Return false if no transform is selected.
+		return <a href="Selection-activeTransform.html">Selection.activeTransform</a> != null;
+	}<p class="basic" />
+	// Add a menu item named "Do Something with a Shortcut Key" to MyMenu in the menu bar
+	// and give it a shortcut (ctrl-g on Windows, cmd-g on OS X).
+	[<a href="MenuItem.html">MenuItem</a> ("MyMenu/Do Something with a Shortcut Key %g")]
+	static void DoSomethingWithAShortcutKey () {
+		<a href="Debug.Log.html">Debug.Log</a> ("Doing something with a Shortcut Key...");
+	}<p class="basic" />	// Add a menu item called "Double Mass" to a Rigidbody's context menu.
+	[<a href="MenuItem.html">MenuItem</a> ("CONTEXT/Rigidbody/Double Mass")]
+	static void DoubleMass (<a href="MenuCommand.html">MenuCommand</a> command) {
+		<a href="Rigidbody.html">Rigidbody</a> body = (<a href="Rigidbody.html">Rigidbody</a>)command.context;
+		body.mass = body.mass * 2;
+		<a href="Debug.Log.html">Debug.Log</a> ("Doubled Rigidbody's Mass to " + body.mass + " from Context Menu.");
+	}<p class="basic" />	// Add a menu item to create custom GameObjects.
+	// Priority 1 ensures it is grouped with the other menu items of the same kind
+	// and propagated to the hierarchy dropdown and hierarch context menus. 
+	[<a href="MenuItem.html">MenuItem</a>("GameObject/MyCategory/Custom Game Object", false, 10)]
+	static void CreateCustomGameObject(<a href="MenuCommand.html">MenuCommand</a> menuCommand) {
+		// Create a custom game object
+		<a href="GameObject.html">GameObject</a> go = new <a href="GameObject.html">GameObject</a>("Custom Game Object");
+		// Ensure it gets reparented if this was a context click (otherwise does nothing)
+		<a href="GameObjectUtility.SetParentAndAlign.html">GameObjectUtility.SetParentAndAlign</a>(go, menuCommand.context as <a href="GameObject.html">GameObject</a>);
+		// Register the creation in the undo system
+		<a href="Undo.RegisterCreatedObjectUndo.html">Undo.RegisterCreatedObjectUndo</a>(go, "Create " + go.name);
+		<a href="Selection-activeObject.html">Selection.activeObject</a> = go;
+	}
+}
+</pre>
+    </div><div class="subsection"><h2>Constructors</h2><table class="list">
+    <tr><td class="lbl"><a href="MenuItem-ctor.html">MenuItem</a></td><td class="desc">Creates a menu item and invokes the static function following it, when the menu item is selected.</td></tr>
+  </table></div></div></div></div></div></div><div class="footer-wrapper"><div class="footer clear"><div class="copy">Copyright © 2014 Unity Technologies</div><div class="menu"><a href="http://unity3d.com/unity">Unity</a><a href="http://unity3d.com/gallery">Gallery</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a></div></div></div><div class="suggestform_background"><div class="suggestform"><div class="suggestline"><div class="suggestlabel">Your name (optional):</div></div><div class="suggestline"><input id="suggest_username" type="text" /></div><div class="suggestline"><div class="suggestlabel">Your email (optional):</div></div><div class="suggestline"><input id="suggest_useremail" type="text" /></div>
+	Please write your suggestion here:
+	<div class="suggestline"><textarea id="suggest_body"> </textarea></div><div class="suggestline"><button id="suggest_submit">Submit</button><button id="suggest_cancel">Cancel</button></div></div></div><script type="text/javascript">
+suggest_form();
+</script></body></html>

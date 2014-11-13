@@ -1,0 +1,274 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Interaction Components</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="../StaticFilesManual/js/toc_en.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/UIInteractionComponents.html">English</a></li>
+<li><a href="/es/current/Manual/UIInteractionComponents.html">Español</a></li>
+<li><a href="/ru/current/Manual/UIInteractionComponents.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="UISystem.html">UI</a></li>
+<li><a href="UIOverview.html"> UI Overview</a></li>
+<li>Interaction Components</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIVisualComponents.html"></a></span><div class="tip">Visual Components</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIAnimationIntegration.html"></a></span><div class="tip">Animation Integration</div>
+</div>
+</div></div>
+<h1>Interaction Components</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>This section covers components in the UI system that handles interaction, such as mouse or touch events and interaction using a keyboard or controller.</p>
+
+<h2>Selectable Base Class</h2>
+
+<p>All the interaction components have some things in common. They are all selectables, and that means they all have shared built-in functionality for visualising transitions between states, and for navigation to other selectables using keyboard or controller. This shared functionality is described here.</p>
+
+<p>Within a selectable component there are several transition options depending on what state the selectable is currently in. The different states are: normal, highlighted, pressed and disabled. </p>
+
+<p>Here are the transition options:</p>
+
+<ul>
+<li><p>
+<strong>Color Tint</strong> - Changes the colour of the button depending on what state it is in, it is possible to select the colour for each individual state. It is also possible to set the <strong>Fade Duration</strong> between the different states. The higher the number is, the slower the fade between colors will be.</p></li>
+<li><p>
+<strong>SpriteSwap</strong> - Allows different sprites to display depending on what state the button is currently in, the sprites can be customised.</p></li>
+<li><p>
+<strong>Animation</strong> - Allows animations to occur depending on the state of the button, an animator component must exist in order to use animation transition. It’s important to make sure root motion is disabled. To create an animation controller click on generate animation (or create your own) and make sure that an animation controller has been added to the animator component of the button. See <a href="UIAnimationIntegration.html">Animation Integration</a> for more information.</p></li>
+<li><p>
+<strong>None</strong> - This option is for the button to have no state effects at all.</p></li>
+</ul>
+
+<p>The <strong>Navigation</strong> options refers to how the navigation of UI elements in play mode will be controlled.</p>
+
+<h2>Button</h2>
+
+<figure>
+<img src="../uploads/Main/UI_ButtonInspector.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>Buttons have an option for OnClick functionality to define what the Button will do when clicked. In the bottom right is a ‘plus’ symbol to add a delegate; the first section is for selecting an object whose functions are required, then next is for selecting a function and the last area is used for variables depending on the selected function.</p>
+
+<figure>
+<img src="../uploads/Main/UI_OnClick.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>The label attached to the button has a Text component, the Label is separated from the Button to allow more freedom in design and customisation. It is possible to set the displayed text, font, font style, font size, text colour and whether or not rich text formatting is enabled.</p>
+
+<h2>Toggle</h2>
+
+<figure>
+<img src="../uploads/Main/UI_ToggleInspector.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>A <strong>Toggle</strong> has a Rect Transform component, an Image component and a Toggle component. It also has a child Label gameObject attached to it which has a Rect Transform component and a Text gameObject. Toggle has an additional child Image gameObject attached called Background which is where the the toggle background is set, as well as having its own Image gameObject child called Checkmark to show the toggle to selected or unselected. </p>
+
+<figure>
+<img src="../uploads/Main/UI_ToggleExample.png" alt="Toggle Group">
+<figcaption>Toggle Group</figcaption></figure>
+
+<p>The <strong>Is On</strong> checkbox determines whether or not the toggle is currently on or off.</p>
+
+<p>
+<strong>Toggle Transition</strong> gives you the option to fade between the toggle being active and not active.</p>
+
+<p>The graphic option is for changing the Toggle background to a more suitable image, this will be affected by colour changes if ColorTint is selected.</p>
+
+<p>There is an option for <strong>On Value Changed</strong> functionality to define what the Toggle will do if selected. In the bottom right is a ‘plus’ symbol to add a delegate; the first section is for selecting an object whose functions are required, then next is for selecting a function and the last area is used for variables depending on the selected function.</p>
+
+<h2>Toggle Group</h2>
+
+<p>A <strong>Toggle Group</strong> can be used to group a set of <a href="script-Toggle.html">Toggles</a>. Toggles that belong to the same group are constrained so that only one of them can be selected at a time - selecting one of them automatically deselects all the others.</p>
+
+<p>In the image below you can see a Toggle Group with one Toggle that’s on and the remanders off.</p>
+
+<figure>
+<img src="../uploads/Main/UI_ToggleGroupExample.png" alt="Toggle Group">
+<figcaption>Toggle Group</figcaption></figure>
+
+<p>The Toggle Group is setup by dragging the Toggle Group object to the Group property of each of the Toggles in the group. Toggle groups are useful anywhere the user is to make a choice from a list of mutually exclusive items.</p>
+
+<h2>Slider</h2>
+
+<p>The <strong>Slider</strong> gameObject can be either vertical or horizontal, it has a child object attached to it called the Fill Area which also has child attached to it called Fill. The Fill gameObject’s transform values are driven by its parents transform values so that it cannot exceed the bounds of the Slider gameObject. </p>
+
+<figure>
+<img src="../uploads/Main/UI_SliderInspector.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>The direction of value increase can be set to left to right or right to left for a horizontal Slider, or up to down and down to up up for a vertical Scroll Bar.</p>
+
+<p>You can set the minimum and maximum slider values in the <strong>Min Value</strong> and <strong>Max Value</strong> fields. If <strong>Whole Numbers</strong> option is selected then the slider will only move up or down when the value is a whole number. <strong>Value</strong> is the current value the slider is positioned at.</p>
+
+<figure>
+<img src="../uploads/Main/UI_SliderImage.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>It is also possible to add script behaviour for when the value of the slider is changed, which can be customised in the On Value Changed field.</p>
+
+<h2>Scrollbar</h2>
+
+<p>The <strong>Scrollbar</strong> gameObject can either be vertical or horizontal. It has a child object attached to it called Background which also has child attached to it called Sliding Area which has a child called Handle. The Handle gameObject’s transform values are driven by its parents transform values so that it cannot exceed the bounds of the Scrollbar gameObject.</p>
+
+<figure>
+<img src="../uploads/Main/UI_ScrollBarInspector.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>Handle Rect defines what the slider will look like, by default it is set to the child gameObject called Handle. The direction of value increase can be set to left to right or right to left for a horizontal Scroll Bar, or up to down and down to up up for a vertical Scroll Bar.</p>
+
+<p>The beginning Scroll Bar value can be set using the <strong>Value</strong> field and the size of the scroll bar itself can be changed in the <strong>Size</strong> field. The scroll bar’s value steps can also be set using the ‘number of steps’ field, e.g 3 steps means the scroll bar will show 0%, 50%, 100%.</p>
+
+<figure>
+<img src="../uploads/Main/UI_ScrollBarImage.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>It is also possible to add script behaviour for when the value of the scroll bar is changed, which can be customised in the On Value Changed field.</p>
+
+<h2>Scroll Rect</h2>
+
+<figure>
+<img src="../uploads/Main/UI_ScrollRectInspector.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>A <strong>Scroll Rect</strong> is used when a large image, or a large group of UI controls needs to be displayed in a small area. The Scroll Rect provides the functionality to scroll over images or other UI elements, with or without the use of scrollbars. Usually it’s combined with a <strong>Mask</strong> and <strong>Image</strong> on the parent Rect Transform in order to create a scroll view, where only the scrollable content inside the Scroll Rect is visible.</p>
+
+<figure>
+<img src="../uploads/Main/UI_ScrollRectExample.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>In the Hierarchy, things should be arranged like this: The Rect Transform with the Scroll Rect on it also has a Mask component on it. In the image below this object is called <strong>ScrollView</strong>.</p>
+
+<p>As a child to the ScrollView should be a single RectTransform that functions as a parent to all the scrollable content. In the image below this object is called <strong>Content</strong>. All the scrollable UI elements should be children of this Content object. The Content object should also be dragged into the <strong>Content</strong> property of the Scroll Rect component.</p>
+
+<figure>
+<img src="../uploads/Main/UI_ScrollRectHierarchy.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>Optionally, the Scroll Rect can be linked to a horizontal and/or a vertical <strong>Scrollbar</strong>. These are typically placed in the hierarchy as siblings to the scroll view, and when present, should be dragged into the <strong>Horizontal Scrollbar</strong> and <strong>Vertical Scrollbar</strong> properties of the Scroll Rect, respectively. Note that the <strong>Direction</strong> property on such a horizontal Scrollbar should be set to <strong>Left To Right</strong>, and on the vertical Scrollbar to <strong>Bottom To Top</strong>.</p>
+
+<h2>Input Field</h2>
+
+<p>An Input Field is used to make the text of a <a href="script-Text.html">Text Control</a> editable.</p>
+
+<figure>
+<img src="../uploads/Main/UI_InputFieldInspector.png" alt="">
+<figcaption></figcaption></figure>
+
+<figure>
+<img src="../uploads/Main/InputFieldCtrlExample.png" alt="A Text control with the editing caret added by an Input Field">
+<figcaption>A Text control with the editing caret added by an Input Field</figcaption></figure>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UIVisualComponents.html"></a></span><div class="tip">Visual Components</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UIAnimationIntegration.html"></a></span><div class="tip">Animation Integration</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Light</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="../StaticFilesManual/js/toc_en.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/class-Light.html">English</a></li>
+<li><a href="/es/current/Manual/class-Light.html">Español</a></li>
+<li><a href="/ru/current/Manual/class-Light.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="Graphics.html">Graphics</a></li>
+<li><a href="GraphicsReference.html">Graphics Reference</a></li>
+<li><a href="LightingReference.html">Lighting Reference</a></li>
+<li>Light</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="LightingReference.html"></a></span><div class="tip">Lighting Reference</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-LightProbeGroup.html"></a></span><div class="tip">Light Probe Group</div>
+</div>
+</div></div>
+<h1>Light</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><a href='../ScriptReference/Light.html' title='Go to Light page in the Scripting Reference' class='switch-link gray-btn smallbtn mr0 right'>Switch to Scripting</a><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>
+<span class="doc-keyword">Lights</span> will bring personality and flavor to your game. You use lights to illuminate the scenes and objects to create the perfect visual mood. Lights can be used to simulate the sun, burning match light, flashlights, gun-fire, or explosions, just to name a few.</p>
+
+<figure>
+<img src="../uploads/Main/LightInspectorV3.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>There are four types of lights in Unity:</p>
+
+<ul>
+<li>
+<span class="doc-keyword">Directional lights</span> are placed infinitely far away and affect everything in the scene, like the sun.</li>
+<li>
+<span class="doc-keyword">Point lights</span> shine from a location equally in all directions, like a light bulb.</li>
+<li>
+<span class="doc-keyword">Spot lights</span> shine from a point in a direction and only illuminate objects within a cone - like the headlights of a car.</li>
+<li>
+<span class="doc-keyword">Area lights</span> (only available for lightmap baking) shine in all directions to one side of a rectangular section of a plane.</li>
+</ul>
+
+<p>Lights can also cast <span class="doc-keyword">Shadows</span>. Shadow properties can be adjusted on a per-light basis.</p>
+
+<h2>Properties</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Type</span></td>
+	<td style="text-align:left;">The current type of light object:</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Directional</span>
+</td>
+	<td style="text-align:left;">A light placed infinitely far away. It affects everything in the scene.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Point</span>
+</td>
+	<td style="text-align:left;">A light that shines equally in all directions from its location, affecting all objects within its <span class="doc-prop">Range</span>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Spot</span>
+</td>
+	<td style="text-align:left;">A light that shines everywhere within a cone defined by <span class="doc-prop">Spot Angle</span> and <span class="doc-prop">Range</span>. Only objects within this region are affected by the light.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Area</span>
+</td>
+	<td style="text-align:left;">A light that shines in all directions to one side of a rectangular area of a plane. The rectangle is defined by the <span class="doc-prop">Width</span> and <span class="doc-prop">Height</span> properties. Area lights are only available during lightmap baking and have no effect on objects at runtime.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Range</span></td>
+	<td style="text-align:left;">How far light is emitted from the center of the object. <span class="doc-prop">Point</span>/<span class="doc-prop">Spot</span> light only.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Spot Angle</span></td>
+	<td style="text-align:left;">Determines the angle of the cone in degrees. <span class="doc-prop">Spot</span> light only.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Color</span></td>
+	<td style="text-align:left;">The color of the light emitted.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Intensity</span></td>
+	<td style="text-align:left;">Brightness of the light. Default value for a <span class="doc-prop">Point</span>/<span class="doc-prop">Spot</span>/<span class="doc-prop">Area</span> light is 1. Default value for a <span class="doc-prop">Directional</span> light is 0.5.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Cookie</span></td>
+	<td style="text-align:left;">The alpha channel of this texture is used as a mask that determines how bright the light is at different places. If the light is a <span class="doc-prop">Spot</span> or a <span class="doc-prop">Directional</span> light, this must be a 2D texture. If the light is a <span class="doc-prop">Point</span> light, it must be a <span class="doc-keyword">Cubemap</span>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Cookie Size</span></td>
+	<td style="text-align:left;">Scales the projection of a Cookie. <span class="doc-prop">Directional</span> light only.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<span class="doc-prop">Shadow Type</span> (Pro only)</td>
+	<td style="text-align:left;">
+<span class="doc-prop">No</span>, <span class="doc-prop">Hard</span> or <span class="doc-prop">Soft</span> <a href="Shadows.html">shadows</a> that will be cast by this light. Soft shadows (not available on Mobile) are more expensive.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Strength</span>
+</td>
+	<td style="text-align:left;">The darkness of the shadows. Values are between 0 and 1.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Resolution</span>
+</td>
+	<td style="text-align:left;">Detail level of the shadows.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Bias</span>
+</td>
+	<td style="text-align:left;">Offset used when comparing the pixel position in light space with the value from the shadow map. See <em>Shadow Mapping and the Bias Property</em> below</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Draw Halo</span></td>
+	<td style="text-align:left;">If checked, a spherical halo of light will be drawn with a radius equal to <span class="doc-prop">Range</span>. See also the <a href="class-Halo.html">Halo</a> documentation and the <a href="class-RenderSettings.html">Render Settings</a> documentation for more details.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Flare</span></td>
+	<td style="text-align:left;">Optional reference to the <a href="class-Flare.html">Flare</a> that will be rendered at the light’s position.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Render Mode</span></td>
+	<td style="text-align:left;">Importance of this light. This can affect lighting fidelity and performance, see <em>Performance Considerations</em> below. Options include:</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Auto</span>
+</td>
+	<td style="text-align:left;">The rendering method is determined at runtime depending on the brightness of nearby lights and current <a href="class-QualitySettings.html">Quality Settings</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Important</span>
+</td>
+	<td style="text-align:left;">This light is always rendered at per-pixel quality. Use this for very important effects only (e.g. headlights of a player’s car).</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Not Important</span>
+</td>
+	<td style="text-align:left;">This light is always rendered in a faster, vertex/object light mode.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Culling Mask</span></td>
+	<td style="text-align:left;">Use to selectively exclude groups of objects from being affected by the light; see <a href="Layers.html">Layers</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Lightmapping</span></td>
+	<td style="text-align:left;">The Lightmapping mode: <span class="doc-prop">RealtimeOnly</span>, <span class="doc-prop">Auto</span> or <span class="doc-prop">BakedOnly</span>; see the <a href="LightmappingInDepth.html">Dual Lightmaps</a> description.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Width</span></td>
+	<td style="text-align:left;">(Area lights only) The width of the rectangular light area.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Height</span></td>
+	<td style="text-align:left;">(Area lights only) The height of the rectangular light area.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Details</h2>
+
+<p>There are four basic light types in Unity. Each type can be customized to fit your needs.</p>
+
+<p>You can create a texture that contains an alpha channel and assign it to the <span class="doc-prop">Cookie</span> variable of the light. The Cookie will be projected from the light. The Cookie’s alpha mask modulates the light amount, creating light and dark spots on surfaces. They are a great way af adding lots of complexity or atmosphere to a scene.</p>
+
+<p>All <a href="Built-inShaderGuide.html">built-in shaders</a> in Unity seamlessly work with any type of light. However, <span class="doc-keyword">VertexLit</span> shaders cannot display Cookies or Shadows.</p>
+
+<p>In Unity Pro all Lights can optionally cast <a href="Shadows.html">Shadows</a>. This is done by selecting either <span class="doc-keyword">Hard Shadows</span> or <span class="doc-keyword">Soft Shadows</span> for the <span class="doc-prop">Shadow Type</span> property of each individual Light. For more information about shadows, please read the <a href="Shadows.html">Shadows</a> page.</p>
+
+<h2>Point Lights</h2>
+
+<figure>
+<img src="../uploads/Main/LightPoint.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>Point lights shine out from a point in all directions. They are the most common lights in computer games - typically used for explosions, light bulbs, etc. They have an average cost on the graphics processor (though point light shadows are the most expensive).</p>
+
+<figure>
+<img src="../uploads/Main/Light-Point.png" alt="Point Light">
+<figcaption>Point Light</figcaption></figure>
+
+<p>Point lights can have cookies - <a href="class-Cubemap.html">Cubemap</a> texture with the alpha channel. This Cubemap gets projected out in all directions.</p>
+
+<figure>
+<img src="../uploads/Main/Light-PointCookie.png" alt="Point Light with a Cookie">
+<figcaption>Point Light with a Cookie</figcaption></figure>
+
+<h2>Spot Lights</h2>
+
+<figure>
+<img src="../uploads/Main/LightSpot.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>Spot lights only shine in one direction, in a cone. They are perfect for flashlights, car headlights or lamp posts. They are the most expensive on the graphics processor.</p>
+
+<figure>
+<img src="../uploads/Main/Light-Spot.png" alt="Spot Light">
+<figcaption>Spot Light</figcaption></figure>
+
+<p>Spot lights can also have cookies - a texture projected down the cone of the light. This is good for creating an effect of light shining through the window. It is very important that the texture is black at the edges, has <span class="doc-prop">Border Mipmaps</span> option on and its wrapping mode is set to <span class="doc-prop">Clamp</span>. For more info on this, see <a href="class-TextureImporter.html">Textures</a>.</p>
+
+<figure>
+<img src="../uploads/Main/Light-SpotCookie.png" alt="Spot Light with a Cookie">
+<figcaption>Spot Light with a Cookie</figcaption></figure>
+
+<h2>Directional Lights</h2>
+
+<figure>
+<img src="../uploads/Main/LightDir.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>Directional lights are used mainly in outdoor scenes for sun &amp; moonlight. They affect all surfaces of objects in your scene. They are the least expensive on the graphics processor. Shadows from directional lights (for platforms that support shadows) are explained in depth on <a href="DirectionalShadowDetails.html">this page</a>.</p>
+
+<figure>
+<img src="../uploads/Main/Light-Direct.png" alt="Directional Light">
+<figcaption>Directional Light</figcaption></figure>
+
+<p>When directional light has a cookie, it is projected down the center of the light’s Z axis. The size of the cookie is controlled with the <span class="doc-prop">Cookie Size</span> property. Set the cookie texture’s wrapping mode to <span class="doc-prop">Repeat</span> in the <span class="doc-keyword">Inspector</span>.</p>
+
+<figure>
+<img src="../uploads/Main/Light-DirectCookie.png" alt="Directional Light projecting a cloud-like cookie texture">
+<figcaption>Directional Light projecting a cloud-like cookie texture</figcaption></figure>
+
+<p>A cookie is a great way to add some quick detail to large outdoor scenes. You can even slide the light slowly over the scene to give the impression of moving clouds.</p>
+
+<p>Note that shadows are disabled for directional lights with cookies when forward rendering is used. It is, however, possible to write custom shaders to enable shadows in such a case by using the <strong>fullforwardshadows</strong> tag; see <a href="SL-SurfaceShaders.html">this page</a> for further details.</p>
+
+<h2>Area Lights</h2>
+
+<p>Area lights cast light from one side of a rectangular area of a plane. </p>
+
+<figure>
+<img src="../uploads/Main/AreaLightDiagram.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>Light is cast on all objects within the light’s range. The size of the rectangle is determined by the Width and Height properties and and the plane’s normal (i.e. the side to which light is cast) is the same as the light’s positive Z direction. Light is emitted from the whole surface of the rectangle, so shading and shadows from affected object tend to be much softer than with point or directional light sources. </p>
+
+<p>Since the lighting calculation is quite processor-intensive, area lights are not available at runtime and can only be baked into lightmaps.</p>
+
+<h2>Performance considerations</h2>
+
+<p>Lights can be rendered in one of two methods: <span class="doc-keyword">vertex</span> lighting and <span class="doc-keyword">pixel</span> lighting. Vertex lighting only calculates the lighting at the vertices of the game models and interpolates the lighting over the surfaces of the models. Pixel lights are calculated at every screen pixel, and hence are much more expensive. Some older graphics cards only support vertex lighting.</p>
+
+<p>While pixel lighting is slower to render, it does allow some effects that are not possible with vertex lighting. Normal-mapping, light cookies and realtime shadows are only rendered for pixel lights. Spotlight shapes and Point light highlights are much better when rendered in pixel mode as well. The three light types above would look like this when rendered in vertex light mode:</p>
+
+<figure>
+<img src="../uploads/Main/Light-PointVertex.png" alt="Point light in Vertex lighting mode.">
+<figcaption>Point light in Vertex lighting mode.</figcaption></figure>
+
+<figure>
+<img src="../uploads/Main/Light-SpotVertex.png" alt="Spot light in Vertex lighting mode.">
+<figcaption>Spot light in Vertex lighting mode.</figcaption></figure>
+
+<figure>
+<img src="../uploads/Main/Light-DirectVertex.png" alt="Directional light in Vertex lighting mode.">
+<figcaption>Directional light in Vertex lighting mode.</figcaption></figure>
+
+<p>Lights have a big impact on rendering speed - therefore a tradeoff has to be made between lighting quality and game speed. Since pixel lights are much more expensive than vertex lights, Unity will only render the brightest lights at per-pixel quality. The actual number of pixel lights can be set in the <a href="class-QualitySettings.html">Quality Settings</a> for webplayer and standalone build targets. </p>
+
+<p>You can explicitly control if a light should be rendered as a vertex or pixel light using the <span class="doc-prop">Render Mode</span> property. By default Unity will classify the light automatically based on how much the object is affected by the light.</p>
+
+<p>The actual lights that are rendered as pixel lights are determined on an object-by-object case.</p>
+
+<p>See <a href="OptimizingGraphicsPerformance.html">Optimizing Graphics Performance</a> page for more information.</p>
+
+<h2>Creating Cookies</h2>
+
+<p>For more information on creating cookies, please see the <a href="HOWTO-LightCookie.html">tutorial on how to create a Spot light cookie</a>.</p>
+
+<h2>Shadow Mapping and the Bias Property</h2>
+
+<p>Shadows are implemented using a technique known as shadow mapping. This is analogous to depth mapping used by a camera to determine which surfaces are obscured by others. The scene is internally rendered by a camera at the position of the light to create a depth map which stores the distance to each surface illuminated by the light. This kind of depth map is referred to as a shadow map. When the scene is rendered to the main view camera, each pixel position in the view is transformed into the light’s space, so that its distance can be compared to the corresponding pixel in the shadow map. If the pixel is more distant than the shadow map pixel, then it is presumably obscured from the light by another object and it will get no illumination.</p>
+
+<figure>
+<img src="../uploads/Main/GoodShadowBias.png" alt="Cylinder with correct shadowing">
+<figcaption>Cylinder with correct shadowing</figcaption></figure>
+
+<p>A surface directly illuminated by a light can sometimes appear to be partly in shadow. This is because pixels that should be exactly at the distance specified in the shadow map will sometimes be deemed farther away (a consequence of using a low resolution image for the map). The result is arbitrary patterns of pixels in shadow when they should really be lit, giving a visual effect known as “shadow acne”.</p>
+
+<figure>
+<img src="../uploads/Main/ShadowAcne.png" alt="Shadow acne in the form of small dots on the cylinder">
+<figcaption>Shadow acne in the form of small dots on the cylinder</figcaption></figure>
+
+<p>To prevent shadow acne, a bias value can be added to the distance in the shadow map to ensure that pixels on the borderline will definitely pass the comparison as they should. This is the value set by the Bias property associated with a light when it has shadows enabled. It is a mistake to set the bias too high, however, since areas of a shadow near to the object casting it can then sometimes be falsely illuminated. This effect is known as “Peter Panning” (i.e. the disconnected shadow makes the object look as if it is flying above the ground, like Peter Pan).</p>
+
+<figure>
+<img src="../uploads/Main/PeterPanning.png" alt="Peter Panning makes the object look raised above the ground">
+<figcaption>Peter Panning makes the object look raised above the ground</figcaption></figure>
+
+<p>The bias value for a light may need a bit of tweaking to make sure that neither shadow acne nor Peter Panning occur. It is generally easier to gauge the right value by eye rather than attempt to calculate it.</p>
+
+<h2>Hints</h2>
+
+<ul>
+<li>Spot lights with cookies can be extremely effective for making light coming in from windows.</li>
+<li>Low-intensity point lights are good for providing depth to a scene.</li>
+<li>For maximum performance, use a <a href="Built-inShaderGuide.html">VertexLit</a> shader. This shader only does per-vertex lighting, giving a much higher throughput on low-end cards.</li>
+<li>Auto lights can cast dynamic shadows over lightmapped objects without adding extra illumination. For this to work the Auto lights must be active when the Lightmap is baked. Otherwise they render as real time lights.</li>
+</ul>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="LightingReference.html"></a></span><div class="tip">Lighting Reference</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-LightProbeGroup.html"></a></span><div class="tip">Light Probe Group</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

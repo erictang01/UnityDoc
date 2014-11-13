@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html><html lang="en" class="no-js"><head><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Unity - Scripting API: RenderTexture</title><meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come." /><meta name="author" content="Unity Technologies" /><link rel="shortcut icon" href="../StaticFiles/images/favicons/favicon.ico" /><link rel="icon" type="image/png" href="../StaticFiles/images/favicons/favicon.png" /><link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFiles/images/favicons/apple-touch-icon-144x144.png" /><link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFiles/images/favicons/apple-touch-icon-114x114.png" /><link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFiles/images/favicons/apple-touch-icon-72x72.png" /><link rel="apple-touch-icon-precomposed" href="../StaticFiles/images/favicons/apple-touch-icon.png" /><script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFiles/js/jquery.js">//jquery</script><script type="text/javascript" src="../StaticFiles/classList.js">//core</script><script type="text/javascript" src="../StaticFiles/js/core.js">//core</script><script type="text/javascript" src="../StaticFiles/js/suggest.js">//suggest</script><link rel="stylesheet" type="text/css" href="../StaticFiles/css/core.css" /><link rel="stylesheet" type="text/css" href="../StaticFiles/css/suggest.css" /><!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="../StaticFiles/css/ie.css" /><![endif]--><!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="../StaticFiles/css/ie7.css" /><![endif]--></head><body><div class="header-wrapper"><div id="header" class="header"><div class="content"><div class="logo"><a href="http://docs.unity3d.com" /></div><ul class="docs-menu"><li><a href="http://docs.unity3d.com">Overview</a></li><li><a href="../Manual/index.html">Manual</a></li><li><a href="../ScriptReference/index.html" class="selected">Scripting API</a></li></ul><div class="more-menu"><div class="box"><div class="label"><a href="http://unity3d.com/learn">Learn</a></div><ul style="display:none;"><li><a href="http://unity3d.com/learn/tutorials/modules">Tutorials</a></li><li><a href="http://unity3d.com/learn/live-training/">Live Training</a></li><li><a href="http://unity3d.com/learn/premium-support">Premium Support</a></li></ul></div><div class="box"><div class="label"><a href="http://unity3d.com/community">Community</a></div><ul style="display:none;"><li><a href="http://forum.unity3d.com/">Forums</a></li><li><a href="http://answers.unity3d.com/">Answers</a></li><li><a href="http://feedback.unity3d.com/">Feedback</a></li><li><a href="http://issuetracker.unity3d.com/">Issue Tracker</a></li></ul></div></div><div class="search"><form action="30_search.html" method="get" class="apisearch"><input type="text" name="q" placeholder="Search" autosave="Unity Reference" results="5" class="sbox field" id="q" /><input type="submit" class="submit" /></form></div></div></div><div class="toolbar"><div class="content"><div class="script-lang"><h4>Script language:</h4><ul><li class="selected" data-lang="JS">JS</li><li data-lang="CS">C#</li><li data-lang="Boo">Boo</li></ul><div id="script-lang-dialog" class="dialog hide"><div class="dialog-header clear"><h5>Script language</h5><div class="close"> </div></div><p>Select your preferred scripting language. All code snippets will be displayed in this language.</p></div></div></div><a class="suggest">Suggest a change</a></div></div><div id="master-wrapper" class="master-wrapper clear"><div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="ruler-t"> </div><div class="ruler-m"> </div><div class="ruler-b"> </div><div class="content"><div class="sidebar-menu"><h2>Scripting API</h2><div class="toc"> </div></div><p><a href="40_history.html" class="cl">History</a></p></div></div></div><div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content"><div class="section"><div class="mb20 clear"><h1 class="heading inherit left">RenderTexture</h1><div class="clear"> </div><p class="cl mb0 left mr10">Namespace: UnityEngine</p><p class="cl mb0 left mr10">/</p><p class="cl mb0 left">Inherits from: <a href="Texture.html" class="cl">Texture</a></p></div><div class="subsection"><div class="signature"><div class="signature-JS sig-block"> </div><div class="signature-CS sig-block"> </div><div class="signature-Boo sig-block"> </div></div></div><div class="subsection"><h2>Description</h2><p>Render textures are textures that can be rendered to.</p></div><div class="subsection"><p>They can be used to implement image based rendering effects, dynamic shadows,
+projectors, reflections or surveillance cameras.<p class="basic" />All rendering goes into the active RenderTexture (<a href="RenderTexture-active.html">active</a> class property).
+If the active RenderTexture is <code class="varname">null</code> everything is rendered to the main window.<p class="basic" />For short-lived temporary render textures, use <a href="RenderTexture.GetTemporary.html">GetTemporary</a> and <a href="RenderTexture.ReleaseTemporary.html">ReleaseTemporary</a>
+functions. These are most often useful in image post processing effects.<p class="basic" />Note that while <a href="../Manual/class-RenderTexture.html">RenderTexture assets</a> can be only power-of-two
+size, it is possible to create a non-power-of-two render textures from scripts.
+These are most often used for image post processing effects.<p class="basic" />Keep in mind that render texture contents can become "lost" on certain events, like loading
+a new level, system going to a screensaver mode, in and our of fullscreen and so on.
+When that happens, your existing render textures will become "not yet created" again,
+you can check for that with <a href="RenderTexture.IsCreated.html">IsCreated</a> function.<p class="basic" />RenderTexture class is only available in <strong>Unity Pro</strong>.</p></div><div class="subsection"><h2>Static Variables</h2><table class="list">
+    <tr><td class="lbl"><a href="RenderTexture-active.html">active</a></td><td class="desc">The active render texture.</td></tr>
+  </table></div><div class="subsection"><h2>Variables</h2><table class="list">
+    <tr><td class="lbl"><a href="RenderTexture-antiAliasing.html">antiAliasing</a></td><td class="desc">The antialiasing level for the RenderTexture.</td></tr>
+    <tr><td class="lbl"><a href="RenderTexture-colorBuffer.html">colorBuffer</a></td><td class="desc">Color buffer of the render texture (Read Only).</td></tr>
+    <tr><td class="lbl"><a href="RenderTexture-depth.html">depth</a></td><td class="desc">The precision of the render texture's depth buffer in bits (0, 16, 24 are supported).</td></tr>
+    <tr><td class="lbl"><a href="RenderTexture-depthBuffer.html">depthBuffer</a></td><td class="desc">Depth buffer of the render texture (Read Only).</td></tr>
+    <tr><td class="lbl"><a href="RenderTexture-enableRandomWrite.html">enableRandomWrite</a></td><td class="desc">Enable DX11 random access write into this render texture.</td></tr>
+    <tr><td class="lbl"><a href="RenderTexture-format.html">format</a></td><td class="desc">The format of the render texture.</td></tr>
+    <tr><td class="lbl"><a href="RenderTexture-generateMips.html">generateMips</a></td><td class="desc">Should mipmap levels be generated automatically?</td></tr>
+    <tr><td class="lbl"><a href="RenderTexture-height.html">height</a></td><td class="desc">The height of the render texture in pixels.</td></tr>
+    <tr><td class="lbl"><a href="RenderTexture-isCubemap.html">isCubemap</a></td><td class="desc">If enabled, this Render Texture will be used as a Cubemap.</td></tr>
+    <tr><td class="lbl"><a href="RenderTexture-isVolume.html">isVolume</a></td><td class="desc">If enabled, this Render Texture will be used as a Texture3D.</td></tr>
+    <tr><td class="lbl"><a href="RenderTexture-sRGB.html">sRGB</a></td><td class="desc">Does this render texture use sRGB read / write (Read Only).</td></tr>
+    <tr><td class="lbl"><a href="RenderTexture-useMipMap.html">useMipMap</a></td><td class="desc">Use mipmaps on a render texture?</td></tr>
+    <tr><td class="lbl"><a href="RenderTexture-volumeDepth.html">volumeDepth</a></td><td class="desc">Volume extent of a 3D render texture.</td></tr>
+    <tr><td class="lbl"><a href="RenderTexture-width.html">width</a></td><td class="desc">The width of the render texture in pixels.</td></tr>
+  </table></div><div class="subsection"><h2>Constructors</h2><table class="list">
+    <tr><td class="lbl"><a href="RenderTexture-ctor.html">RenderTexture</a></td><td class="desc">Creates a new RenderTexture object.</td></tr>
+  </table></div><div class="subsection"><h2>Public Functions</h2><table class="list">
+    <tr><td class="lbl"><a href="RenderTexture.Create.html">Create</a></td><td class="desc">Actually creates the RenderTexture.</td></tr>
+    <tr><td class="lbl"><a href="RenderTexture.DiscardContents.html">DiscardContents</a></td><td class="desc">Discards the contents of the RenderTexture.</td></tr>
+    <tr><td class="lbl"><a href="RenderTexture.IsCreated.html">IsCreated</a></td><td class="desc">Is the render texture actually created?</td></tr>
+    <tr><td class="lbl"><a href="RenderTexture.MarkRestoreExpected.html">MarkRestoreExpected</a></td><td class="desc">Indicate that there's a RenderTexture restore operation expected.</td></tr>
+    <tr><td class="lbl"><a href="RenderTexture.Release.html">Release</a></td><td class="desc">Releases the RenderTexture.</td></tr>
+    <tr><td class="lbl"><a href="RenderTexture.SetGlobalShaderProperty.html">SetGlobalShaderProperty</a></td><td class="desc">Assigns this RenderTexture as a global shader property named propertyName.</td></tr>
+  </table></div><div class="subsection"><h2>Static Functions</h2><table class="list">
+    <tr><td class="lbl"><a href="RenderTexture.GetTemporary.html">GetTemporary</a></td><td class="desc">Allocate a temporary render texture.</td></tr>
+    <tr><td class="lbl"><a href="RenderTexture.ReleaseTemporary.html">ReleaseTemporary</a></td><td class="desc">Release a temporary texture allocated with GetTemporary.</td></tr>
+    <tr><td class="lbl"><a href="RenderTexture.SupportsStencil.html">SupportsStencil</a></td><td class="desc">Does the RenderTexture have stencil buffer?</td></tr>
+  </table></div><div class="subsection"><h2>Inherited members</h2>
+    
+    <div class="subsection"><h2>Variables</h2><table class="list">
+      <tr><td class="lbl"><a href="Object-hideFlags.html">hideFlags</a></td><td class="desc">Should the object be hidden, saved with the scene or modifiable by the user?</td></tr>
+      <tr><td class="lbl"><a href="Object-name.html">name</a></td><td class="desc">The name of the object.</td></tr>
+      <tr><td class="lbl"><a href="Texture-anisoLevel.html">anisoLevel</a></td><td class="desc">Anisotropic filtering level of the texture.</td></tr>
+      <tr><td class="lbl"><a href="Texture-filterMode.html">filterMode</a></td><td class="desc">Filtering mode of the texture.</td></tr>
+      <tr><td class="lbl"><a href="Texture-height.html">height</a></td><td class="desc">Height of the texture in pixels. (Read Only)</td></tr>
+      <tr><td class="lbl"><a href="Texture-mipMapBias.html">mipMapBias</a></td><td class="desc">Mip map bias of the texture.</td></tr>
+      <tr><td class="lbl"><a href="Texture-width.html">width</a></td><td class="desc">Width of the texture in pixels. (Read Only)</td></tr>
+      <tr><td class="lbl"><a href="Texture-wrapMode.html">wrapMode</a></td><td class="desc">Wrap mode (Repeat or Clamp) of the texture.</td></tr>
+    </table></div>
+    
+    <div class="subsection"><h2>Public Functions</h2><table class="list">
+      <tr><td class="lbl"><a href="Object.GetInstanceID.html">GetInstanceID</a></td><td class="desc">Returns the instance id of the object.</td></tr>
+      <tr><td class="lbl"><a href="Object.ToString.html">ToString</a></td><td class="desc">Returns the name of the game object.</td></tr>
+      <tr><td class="lbl"><a href="Texture.GetNativeTextureID.html">GetNativeTextureID</a></td><td class="desc">Retrieve native ('hardware') handle to a texture.</td></tr>
+      <tr><td class="lbl"><a href="Texture.GetNativeTexturePtr.html">GetNativeTexturePtr</a></td><td class="desc">Retrieve native ('hardware') pointer to a texture.</td></tr>
+    </table></div>
+    
+    <div class="subsection"><h2>Static Functions</h2><table class="list">
+      <tr><td class="lbl"><a href="Object.Destroy.html">Destroy</a></td><td class="desc">Removes a gameobject, component or asset.</td></tr>
+      <tr><td class="lbl"><a href="Object.DestroyImmediate.html">DestroyImmediate</a></td><td class="desc">Destroys the object obj immediately. You are strongly recommended to use Destroy instead.</td></tr>
+      <tr><td class="lbl"><a href="Object.DontDestroyOnLoad.html">DontDestroyOnLoad</a></td><td class="desc">Makes the object target not be destroyed automatically when loading a new scene.</td></tr>
+      <tr><td class="lbl"><a href="Object.FindObjectOfType.html">FindObjectOfType</a></td><td class="desc">Returns the first active loaded object of Type type.</td></tr>
+      <tr><td class="lbl"><a href="Object.FindObjectsOfType.html">FindObjectsOfType</a></td><td class="desc">Returns a list of all active loaded objects of Type type.</td></tr>
+      <tr><td class="lbl"><a href="Object.Instantiate.html">Instantiate</a></td><td class="desc">Clones the object original and returns the clone.</td></tr>
+      <tr><td class="lbl"><a href="Texture.SetGlobalAnisotropicFilteringLimits.html">SetGlobalAnisotropicFilteringLimits</a></td><td class="desc">Sets Anisotropic limits.</td></tr>
+    </table></div>
+    <div class="subsection"><h2>Operators</h2><table class="list">
+      <tr><td class="lbl"><a href="Object-operator_Object.html">bool</a></td><td class="desc">Does the object exist?</td></tr>
+      <tr><td class="lbl"><a href="Object-operator_ne.html">operator !=</a></td><td class="desc">Compares if two objects refer to a different object.</td></tr>
+      <tr><td class="lbl"><a href="Object-operator_eq.html">operator ==</a></td><td class="desc">Compares if two objects refer to the same.</td></tr>
+    </table></div>
+    
+    
+  </div></div></div></div></div></div><div class="footer-wrapper"><div class="footer clear"><div class="copy">Copyright © 2014 Unity Technologies</div><div class="menu"><a href="http://unity3d.com/unity">Unity</a><a href="http://unity3d.com/gallery">Gallery</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a></div></div></div><div class="suggestform_background"><div class="suggestform"><div class="suggestline"><div class="suggestlabel">Your name (optional):</div></div><div class="suggestline"><input id="suggest_username" type="text" /></div><div class="suggestline"><div class="suggestlabel">Your email (optional):</div></div><div class="suggestline"><input id="suggest_useremail" type="text" /></div>
+	Please write your suggestion here:
+	<div class="suggestline"><textarea id="suggest_body"> </textarea></div><div class="suggestline"><button id="suggest_submit">Submit</button><button id="suggest_cancel">Cancel</button></div></div></div><script type="text/javascript">
+suggest_form();
+</script></body></html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Directional Shadow Details</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="../StaticFilesManual/js/toc_en.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/DirectionalShadowDetails.html">English</a></li>
+<li><a href="/es/current/Manual/DirectionalShadowDetails.html">Español</a></li>
+<li><a href="/ru/current/Manual/DirectionalShadowDetails.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="Graphics.html">Graphics</a></li>
+<li>Graphics HOWTOs</li>
+<li><a href="Shadows.html">Shadows in Unity</a></li>
+<li>Directional Shadow Details</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="Shadows.html"></a></span><div class="tip">Shadows in Unity</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ShadowTroubleshooting.html"></a></span><div class="tip">Troubleshooting Shadows</div>
+</div>
+</div></div>
+<h1>Directional Shadow Details</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>This page explains <a href="Shadows.html">shadows</a> from <span class="doc-keyword">Directional</span> lights in detail.</p>
+
+<p>
+<strong>Note</strong>: on mobile platforms realtime shadows for directional lights <strong>always</strong> use 1 shadow cascade and are <span class="doc-keyword">Hard Shadows</span>.</p>
+
+<p>Directional lights are mostly used as a key light – sunlight or moonlight – in an outdoor game. Viewing distances can be huge, especially in first and third person games, and shadows often require some tuning to get the best quality vs. performance balance for your situation.</p>
+
+<p>Let’s start out with a good looking shadow setup for a 3rd person perspective game:</p>
+
+<figure>
+<img src="../uploads/Main/Shadow50-4hs.png" alt="Shadows here look pretty good!">
+<figcaption>Shadows here look pretty good!</figcaption></figure>
+
+<p>Here, visible distance is about 50 game units, so <span class="doc-prop">Shadow Distance</span> was set to 50 in <a href="class-QualitySettings.html">Quality Settings</a>. Also, <span class="doc-prop">Shadow Cascades</span> was set to 4, <span class="doc-prop">Shadow Resolution</span> to High, and the light uses <span class="doc-prop">Soft Shadows</span>.</p>
+
+<h2>Hard versus Soft shadows</h2>
+
+<p>Using the same light setup, if we switch <span class="doc-prop">Shadow Type</span> to Hard Shadows, then the transition from lit to shadowed regions is “hard” - either something is 100% in shadow, or 100% lit. Hard shadows are faster to render but often they look less realistic.</p>
+
+<figure>
+<img src="../uploads/Main/Shadow50-4hh.png" alt="Hard shadows with distance of 50 and four cascades.">
+<figcaption>Hard shadows with distance of 50 and four cascades.</figcaption></figure>
+
+<h2>Shadow Cascade count</h2>
+
+<p>For Directional lights Unity can use so called <span class="doc-keyword">Cascaded Shadow Maps</span> (alternatively called “Parallel Split Shadow Maps”) which give very good shadow quality, especially for long viewing distances. Cascaded shadows work by dividing viewing area into progressively larger portions and using the same size shadow map on each. The result is that objects close to the viewer get more shadow map pixels than objects far away.</p>
+
+<p>In the images below we’ll use hard shadows because shadow pixels are better visible there.</p>
+
+<p>If no cascaded shadow maps were used, the entire shadow distance (still 50 units in our case) must be covered by the shadow texture uniformly. Hard shadows would look like this with no cascades:</p>
+
+<figure>
+<img src="../uploads/Main/Shadow50-1hh.png" alt="Hard shadows with distance of 50 and no cascades.">
+<figcaption>Hard shadows with distance of 50 and no cascades.</figcaption></figure>
+
+<p>The pixels of the shadow texture are the same size everywhere, and while they look good in distance, the quality is not stellar up close. The shadow texture covers the entire viewing area, and if visualized it would look like this:</p>
+
+<figure>
+<img src="../uploads/Main/Cascades1.png" alt="With no cascades, shadow texture covers viewing area uniformly.">
+<figcaption>With no cascades, shadow texture covers viewing area uniformly.</figcaption></figure>
+
+<p>When two shadow cascades are used, the entire shadow distance is divided into a smaller chunk near the viewer and a larger chunk far away. Hard shadows would look like this with two cascades:</p>
+
+<figure>
+<img src="../uploads/Main/Shadow50-2hh.png" alt="Hard shadows with distance of 50 and two cascades.">
+<figcaption>Hard shadows with distance of 50 and two cascades.</figcaption></figure>
+
+<p>In exchange for some performance, we get better shadow resolution up close.</p>
+
+<figure>
+<img src="../uploads/Main/Cascades2.png" alt="With two cascades, two shadow textures cover different sized portions of viewing area.">
+<figcaption>With two cascades, two shadow textures cover different sized portions of viewing area.</figcaption></figure>
+
+<p>And finally when four shadow cascades are used, the shadow distance is divided into four progressively larger portions. Hard shadows would look like this with four cascades:</p>
+
+<figure>
+<img src="../uploads/Main/Shadow50-4hh.png" alt="Hard shadows with distance of 50 and four cascades. Hey, weve seen this already!">
+<figcaption>Hard shadows with distance of 50 and four cascades. Hey, we’ve seen this already!</figcaption></figure>
+
+<figure>
+<img src="../uploads/Main/Cascades4.png" alt="With four cascades, four shadow textures cover different sized portions of viewing area.">
+<figcaption>With four cascades, four shadow textures cover different sized portions of viewing area.</figcaption></figure>
+
+<p>
+<span class="doc-prop">Shadow Distance</span> is extremely important for both quality and performance of directional light shadows. Just like shadow cascade count, shadow distance can be set in <a href="class-QualitySettings.html">Quality Settings</a> and allows an easy way to scale shadows down on less performant hardware.</p>
+
+<p>Shadows fade out at the end of shadow distance, and further than that objects are not shadowed. In most situations shadows further than some distance in the game would not be noticeable anyway!</p>
+
+<p>With no shadow cascades, hard shadows and shadow distance set to 20 units our shadows look like picture below. Note that shadows do fade out in the distance, but at the same time shadow quality is much better than it was with no cascades and a distance of 50 units.</p>
+
+<figure>
+<img src="../uploads/Main/Shadow20-1hh.png" alt="Hard shadows with distance of 20 and no cascades.">
+<figcaption>Hard shadows with distance of 20 and no cascades.</figcaption></figure>
+
+<p>If on the other hand we set shadow distance too high, shadows won’t look good at all. Setting distance to 100 here only decreases both performance and quality and does not make much sense - no objects in the scene are further than about 50 meters anyway!</p>
+
+<figure>
+<img src="../uploads/Main/Shadow100-1hh.png" alt="Hard shadows with distance of 100 and no cascades. Ouch!">
+<figcaption>Hard shadows with distance of 100 and no cascades. Ouch!</figcaption></figure>
+
+<p>Shadow maps with cascades scale with distance much better. For example, four cascade soft shadows with covering 300 units in front of the camera look like picture below. It’s somewhat worse than the picture at the top of this page, but not very bad either for a 6x increase in shadowing distance (of course in this scene that high shadow distance does not make much sense).</p>
+
+<figure>
+<img src="../uploads/Main/Shadow300-4hs.png" alt="Soft shadows with distance of 300 and four cascades.">
+<figcaption>Soft shadows with distance of 300 and four cascades.</figcaption></figure>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="Shadows.html"></a></span><div class="tip">Shadows in Unity</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ShadowTroubleshooting.html"></a></span><div class="tip">Troubleshooting Shadows</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

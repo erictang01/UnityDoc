@@ -1,0 +1,223 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: NavMesh Agent</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="../StaticFilesManual/js/toc_en.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/class-NavMeshAgent.html">English</a></li>
+<li><a href="/es/current/Manual/class-NavMeshAgent.html">Español</a></li>
+<li><a href="/ru/current/Manual/class-NavMeshAgent.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="Navigation.html">Navigation and Pathfinding</a></li>
+<li>Navigation Reference</li>
+<li>NavMesh Agent</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="NavLayersAndCosts.html"></a></span><div class="tip">Navigation Layers and Costs</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-NavMeshObstacle.html"></a></span><div class="tip">Navmesh Obstacle</div>
+</div>
+</div></div>
+<h1>NavMesh Agent</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><a href='../ScriptReference/NavMeshAgent.html' title='Go to NavMeshAgent page in the Scripting Reference' class='switch-link gray-btn smallbtn mr0 right'>Switch to Scripting</a><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>A <span class="doc-keyword">NavMesh Agent</span> component can be added to a character to allow it to navigate from place to place automatically over a <a href="Navmeshes.html">Navigation Mesh</a>. The agent begins its task by using information stored in the mesh to calculate an optimal path. With the path calculated, the agent is then responsible for moving the object automatically along the path. </p>
+
+<figure>
+<img src="../uploads/Main/NavMeshAgent.png" alt="">
+<figcaption></figcaption></figure>
+
+<h2>Properties</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Radius</span></td>
+	<td style="text-align:left;">Radius around the agent within which obstacles should not pass.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Speed</span></td>
+	<td style="text-align:left;">Maximum movement speed (in world units per second).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Acceleration</span></td>
+	<td style="text-align:left;">Maximum acceleration (in world units per second squared).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Angular Speed</span></td>
+	<td style="text-align:left;">Maximum speed of rotation (degrees per second).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Stopping distance</span></td>
+	<td style="text-align:left;">Minimum distance from the target within which the agent can stop.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Auto Traverse OffMesh Link</span></td>
+	<td style="text-align:left;">Should <a href="OffMeshLinks.html">off-mesh links</a> be crossed automatically without intervention from a script?</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Auto Repath</span></td>
+	<td style="text-align:left;">Should a new path be calculated if the current one becomes obstructed or invalid?</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Auto Braking</span></td>
+	<td style="text-align:left;">Should the agent automatically slow down as it approaches the target point?</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Height</span></td>
+	<td style="text-align:left;">The height clearance the agent needs to pass below an obstacle overhead.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Base offset</span></td>
+	<td style="text-align:left;">Height difference between the anchor point of the GameObject and the centre point of the agent’s cylinder.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Obstacle Avoidance Type</span></td>
+	<td style="text-align:left;">An approximate quality level for obstacle avoidance.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Avoidance Priority</span></td>
+	<td style="text-align:left;">Agents of lower priority will be ignored by this agent when performing avoidance. The value should be in the range 0..99 where lower numbers indicate higher priority.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">NavMesh Walkable</span></td>
+	<td style="text-align:left;">Specifies the <a href="NavLayersAndCosts.html">Navmesh layers</a> that the agent can traverse.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Details</h2>
+
+<p>The agent is defined by an upright cylinder whose size is specified by the <em>Radius</em> and <em>Height</em> properties. The cylinder moves with the object but always remains upright even if the object itself rotates. Its purpose is to define the region within which obstacles should not intrude as the object moves around. The agent will aim to keep a distance of <em>Radius</em> or greater between its centre and surrounding obstacles and cannot pass under a ceiling lower than the <em>Height</em> property. When the GameObject’s anchor point does not coincide with the base of the cylinder, you can use the <em>Base Offset</em> property to take up the height difference.</p>
+
+<p>The path calculated by the agent is a sequence of <em>waypoints</em> connected by straight lines that denote the shortest path. However, rather than follow this path perfectly, the agent will use more realistic motion that incorporates acceleration and gradual turning (specified by the <em>Speed</em>, <em>Acceleration</em> and <em>Angular Speed</em> properties). </p>
+
+<p>Since the agent has gradual acceleration and a limit on its turn rate, it typically won’t be able to stop precisely on the target point. Without further intervention, it will overshoot the target and then turn to try to reach it again from the other side. This results in endless “orbiting” around the target point and the agent will thus never truly reach its destination. This well-known problem is handled in Unity using the <em>Stopping Distance</em> and <em>Auto Braking</em> properties. When the agent gets within the <em>Stopping Distance</em> of the target, it is assumed to have reached its destination and can stop moving. When <em>Auto Braking</em> is switched on, the agent will slow down automatically as it gets close to the target, thus enabling it to turn in a tighter circle and get closer to the target point. The ideal choice of stopping distance depends on the speed, acceleration and angular speed of the agent; landing very close to the target from speed can involve gradual slowing and course adjustment from the agent, resulting in unnatural movement.</p>
+
+<p>As it moves around, an agent will avoid fixed obstacles in the scene as well as other agents. The <em>Obstacle Avoidance Type</em> gives a hint to the navigation system about how accurate the avoidance should be. Low quality may sometimes allow obstacles to come within the agent’s cylinder but the processing overhead will be lower than with high quality. The <em>Avoidance Priority</em> determines how the agent will behave when it encounters another agent - the agent with the larger priority number will avoid while the other will just follow its normal path.</p>
+
+<p>For further information about the use of NavMesh Agents, see the page about <a href="EnablingCharToNavigate.html">Enabling a Character To Navigate</a>.</p>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="NavLayersAndCosts.html"></a></span><div class="tip">Navigation Layers and Costs</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-NavMeshObstacle.html"></a></span><div class="tip">Navmesh Obstacle</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

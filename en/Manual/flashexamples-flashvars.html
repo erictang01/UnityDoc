@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Example: Flash Vars</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="../StaticFilesManual/js/toc_en.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/flashexamples-flashvars.html">English</a></li>
+<li><a href="/es/current/Manual/flashexamples-flashvars.html">Español</a></li>
+<li><a href="/ru/current/Manual/flashexamples-flashvars.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="PlatformSpecific.html">Platform Specific</a></li>
+<li><a href="Web.html">Web</a></li>
+<li><a href="flash-gettingstarted.html">Getting Started with Flash Development</a></li>
+<li>Example: Flash Vars</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="flashexamples-accessingthestage.html"></a></span><div class="tip">Example: Accessing the Stage</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="WebPlayerDeployment.html"></a></span><div class="tip">Web Player Deployment</div>
+</div>
+</div></div>
+<h1>Example: Flash Vars</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>If you wish to obtain parameters from FlashVars, you have to create a LoaderInfo object in Actionscript and access its property “parameters”, which is an object that contains name-value pairs representing the parameters provided to the loaded SWF file.</p>
+
+<p>Create a folder inside Assets called “ActionScript”. Now create an empty textfile called “FlashVars.as” inside this folder, and insert the following code.</p>
+
+<h3>ActionScript 3</h3>
+
+<pre><code>package {
+    import com.unity.UnityNative; 
+    import flash.display.LoaderInfo;
+        
+    public class FlashVars {
+        public static function Join(delimiter: String): String {
+            var parameters: Object = LoaderInfo(UnityNative.stage.loaderInfo).parameters;
+            var text: String = &quot;&quot;;
+            for (var key: String in parameters)
+                text += (text.length ? delimiter : &quot;&quot;) + key + &quot;=&quot; + parameters[key];
+            return text;
+        }
+    }
+}
+
+</code></pre>
+
+<p>This Actionscript function will obtain the FlashVars and concatenate the name-value pairs into a string that can be passed to Unity. Call the function and parse the returned list of parameters in a table.</p>
+
+<h3>C#</h3>
+
+<pre><code>string parameters;
+Dictionary&lt;string,string&gt; paramTable;
+    
+parameters = UnityEngine.Flash.ActionScript.Expression&lt;string&gt;(&quot;FlashVars.Join('|')&quot;);
+string[] list = parameters.Split('|'); 
+paramTable = new Dictionary&lt;string, string&gt;();
+        
+foreach (string parameter in list) {
+    string key = parameter.Substring(0, parameter.IndexOf('='));
+    string val = parameter.Substring(parameter.IndexOf('=') + 1);
+    paramTable.Add(key, val);
+}
+
+</code></pre>
+
+<p>The parameters string and parameters table are defined first. The table is a dictionary of string keys and values that will contain the FlashVars. Then the Actionscript function is called, and the name-value pairs are extracted from parameters and added to the table. Now you can read the parameters in you application. In the following example some values are shown and a given scene will be loaded as defined in FlashVars.</p>
+
+<h3>C</h3>
+
+<pre><code>void OnGUI () {
+    GUILayout.Label(&quot; FlashVars = &quot; + parameters);
+    GUILayout.Label(&quot; unitydebug = &quot; + paramTable[&quot;unitydebug&quot;]);
+    GUILayout.Label(&quot; deeptrace = &quot; + paramTable[&quot;deeptrace&quot;]);
+    
+    if (GUILayout.Button(&quot;Click here to load &quot; + paramTable[&quot;scene&quot;]))
+        Application.LoadLevel(paramTable[&quot;scene&quot;]);
+}
+
+</code></pre>
+
+<p>Build the project for the first time to generate an HTML file, and edit its FlashVars for IE and other browsers (two different lines).</p>
+
+<h3>HTML</h3>
+
+<pre><code>&lt;param name=&quot;flashvars&quot; value=&quot;unitydebug=false&amp;amp;deeptrace=false&amp;amp;scene=Scene1&quot; /&gt;
+
+
+</code></pre>
+
+<p>Finally open the HTML file in a browser to run the project.</p>
+
+<p>.</p>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="flashexamples-accessingthestage.html"></a></span><div class="tip">Example: Accessing the Stage</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="WebPlayerDeployment.html"></a></span><div class="tip">Web Player Deployment</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

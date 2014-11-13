@@ -1,0 +1,217 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Shadows in Unity</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="../StaticFilesManual/js/toc_en.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/Shadows.html">English</a></li>
+<li><a href="/es/current/Manual/Shadows.html">Español</a></li>
+<li><a href="/ru/current/Manual/Shadows.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="Graphics.html">Graphics</a></li>
+<li>Graphics HOWTOs</li>
+<li>Shadows in Unity</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="HOWTO-ImportObjectBlender.html"></a></span><div class="tip">Importing Objects From Blender</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="DirectionalShadowDetails.html"></a></span><div class="tip">Directional Shadow Details</div>
+</div>
+</div></div>
+<h1>Shadows in Unity</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Unity Pro makes it possible to use real-time <span class="doc-keyword">shadows</span> on any light. Objects can cast shadows onto each other and onto parts of themselves (“self shadowing”). Directional, Spot and Point lights support shadows.</p>
+
+<p>Using shadows can be as simple as choosing <span class="doc-keyword">Hard Shadows</span> or <span class="doc-keyword">Soft Shadows</span> on a <a href="class-Light.html">Light</a>. However, if you want optimal shadow quality and performance, there are some additional things to consider.</p>
+
+<p>The <a href="ShadowTroubleshooting.html">Shadow Troubleshooting</a> page contains solutions to common shadowing problems.</p>
+
+<p>Curiously enough, the best shadows are non-realtime ones! Whenever your game level geometry and lighting is static, just precompute <a href="Lightmapping.html">lightmaps</a> in Unity. Computing shadows offline will always result in better quality and performance than displaying them in real time. <em>Now onto the realtime ones…</em>
+</p>
+
+<h2>Tweaking shadow quality</h2>
+
+<p>Unity uses so called <a href="http://en.wikipedia.org/wiki/Shadow_mapping">shadow maps</a> to display shadows. Shadow mapping is a texture based approach, it’s easiest to think of it as “shadow textures” projecting out from lights onto the scene. Thus much like regular texturing, quality of shadow mapping mostly depends on two factors:</p>
+
+<ul>
+<li>The <span class="doc-keyword">resolution</span> (size) of the shadow maps. The larger the shadow maps, the better the shadow quality.</li>
+<li>The <span class="doc-keyword">filtering</span> of the shadows. Hard shadows take the nearest shadow map pixel. Soft shadows average several shadow map pixels, resulting in smoother looking shadows. However, soft shadows are more expensive to render.</li>
+</ul>
+
+<p>Different <span class="doc-prop">Light</span> types use different algorithms to calculate shadows.</p>
+
+<ul>
+<li>For Directional lights, the crucial settings for shadow quality are <span class="doc-menu">Shadow Distance</span> and <span class="doc-menu">Shadow Cascades</span>, found in <a href="class-QualitySettings.html">Quality Settings</a>. <span class="doc-menu">Shadow Resolution</span> is also taken into account, but the first thing to try when improving directional shadow quality is to reduce shadow distance. All the details about directional light shadows can be found in <a href="DirectionalShadowDetails.html">Directional Shadow Details</a>.</li>
+<li>For Spot and Point lights, <span class="doc-menu">Shadow Resolution</span> determines shadow map size. Additionally, for lights that cover small area on the screen, smaller shadow map resolutions are used.</li>
+</ul>
+
+<p>Details on how shadow map sizes are computed are in <a href="ShadowSizeDetails.html">Shadow Size Details</a> page.</p>
+
+<h2>Shadow performance</h2>
+
+<p>Realtime shadows are quite performance hungry, so use them sparingly. For each light to render its shadows, first any potential shadow casters must be rendered into the shadow map, then all shadow receivers are rendered with the shadow map. This makes shadow casting lights even more expensive than <span class="doc-keyword">Pixel lights</span>, but hey, computers are getting faster as well!</p>
+
+<p>Soft shadows are more expensive to render than hard shadows. The cost is entirely on the graphics card though (it’s only longer shaders), so hard vs. soft shadows don’t make any impact on the CPU or memory.</p>
+
+<p>
+<a href="class-QualitySettings.html">Quality Settings</a> contains a setting called <span class="doc-menu">Shadow Distance</span> - this is how far from the camera shadows are drawn. Often it makes no sense to calculate and display shadows that are 500 meters away from the camera, so use as low shadow distance as possible for your game. This will help performance (and will improve quality of directional light shadows, see above).</p>
+
+<h2>Hardware support for shadows</h2>
+
+<p>Built-in shadows require a fragment program (pixel shader 2.0) capable graphics card. The following cards are supported:</p>
+
+<ul>
+<li>On Windows:
+
+<ul>
+<li>ATI Radeon 9500 and up, Radeon X series, Radeon HD series.</li>
+<li>NVIDIA GeForce 6xxx, 7xxx, 8xxx, 9xxx, GeForce GT, GTX series.</li>
+<li>Intel GMA X3000 (965) and up.</li>
+</ul>
+</li>
+<li>On Mac OS X:
+
+<ul>
+<li>Mac OS X 10.6 (Snow Leopard) or later.</li>
+<li>ATI Radeon 9500 and up, Radeon X, Radeon HD series.</li>
+<li>NVIDIA GeForce FX, 6xxx, 7xxx, 8xxx, 9xxx, GT, GTX series.</li>
+<li>Intel GMA 950 and later.
+
+<ul>
+<li>Soft shadows are disabled because of driver bugs (hard shadows will be used instead).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Mobile (iOS &amp; Android):
+
+<ul>
+<li>OpenGL ES 2.0 or later</li>
+<li>GL_OES_depth_texture support. Most notably, Tegra-based Android devices do not have it, so shadows are not supported there.</li>
+</ul>
+</li>
+</ul>
+
+<h2>Notes</h2>
+
+<ul>
+<li>
+<a href="RenderTech-ForwardRendering.html">Forward rendering path</a> supports only one directional shadow casting light. <a href="RenderTech-VertexLit.html">Vertex Lit</a> rendering path does not support realtime shadows.</li>
+<li>Vertex-lit lights don’t have shadows.</li>
+<li>Vertex-lit materials won’t receive shadows (but do cast shadows).</li>
+<li>Transparent objects don’t cast or receive shadows. Transparent Cutout objects do cast and receive shadows.</li>
+<li>On mobile platforms (OpenGL ES 2.0/3.0) in deferred rendering path, all objects that are rendered using the forward rendering path do not receive realtime shadows.</li>
+</ul>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="HOWTO-ImportObjectBlender.html"></a></span><div class="tip">Importing Objects From Blender</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="DirectionalShadowDetails.html"></a></span><div class="tip">Directional Shadow Details</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>
