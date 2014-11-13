@@ -1,0 +1,223 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Scene View</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="../StaticFilesManual/js/toc_en.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/SceneView.html">English</a></li>
+<li><a href="/es/current/Manual/SceneView.html">Español</a></li>
+<li><a href="/ru/current/Manual/SceneView.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="UnityOverview.html">Unity Overview</a></li>
+<li><a href="UnityBasics.html">Unity Basics</a></li>
+<li><a href="LearningtheInterface.html">Learning the Interface</a></li>
+<li>Scene View</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="Toolbar.html"></a></span><div class="tip">Toolbar</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="GameView.html"></a></span><div class="tip">Game View</div>
+</div>
+</div></div>
+<h1>Scene View 场景视图</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<figure>
+<img src="../uploads/Main/Editor-Scene43.png" alt="The Scene View">
+<figcaption>The Scene View</figcaption></figure>
+
+<p>The <span class="doc-keyword">Scene View</span> is your interactive sandbox. You will use the Scene View to select and position environments, the player, the camera, enemies, and all other <span class="doc-keyword">GameObjects</span>. Maneuvering and manipulating objects within the Scene View are some of the most important functions in Unity, so it’s important to be able to do them quickly. To this end, Unity provides keystrokes for the most common operations.</p>
+<p>场景视图是交互式沙盒。可以使用它来选择和布置环境、玩家、摄像机、敌人和所有其他游戏对象。在场景视图中调动和操作对象是<span lang="EN-US">Unity</span>最重要的功能，因此，能够迅速掌握它们是非常重要的。为此，<span lang="EN-US">Unity</span>提供了常用操作的快捷键。</p>
+
+<h2>Scene View Navigation<strong> 场景视图导航</strong></h2>
+
+<p>See <a href="SceneViewNavigation.html">Scene View Navigation</a> for full details on navigating the scene view. Here’s a brief overview of the essentials:</p>
+<p>要查看场景视图导航的更详细资料请点击<a href="SceneViewNavigation.html">Scene View Navigation</a>。下面是简要概述：</p>
+
+<ul>
+<li>Hold the right mouse button to enter <span class="doc-keyword">Flythrough</span> mode. This turns your mouse and <span class="doc-keyword">WASD</span> keys (plus <span class="doc-keyword">Q</span> and <span class="doc-keyword">E</span> for up and down) into quick first-person view navigation.</li>
+<li>按住鼠标右键进入飞行穿越模式。旋转你的鼠标且使用WASD键（Q向上、E向下）进入快速的第一人称视角导航</li>
+<li>Select any GameObject and press the <span class="doc-keyword">F</span> key. This will center the Scene View and pivot point on the selection.</li>
+<li>选择任意游戏对象，然后按F键，所选择的物体将在场景视图的中心位置显示。</li>
+<li>Use the arrow keys to move around on the X/Z plane.</li>
+<li>使用方向键，将沿X/Z平面方向移动。</li>
+<li>Hold <span class="doc-keyword">Alt</span> and click-drag to orbit the camera around the current pivot point.</li>
+<li>使用方向键，将沿X/Z平面方向移动。</li>
+<li>Hold <span class="doc-keyword">Alt</span> and middle click-drag to drag the Scene View camera around.</li>
+<li>使用方向键，将沿X/Z平面方向移动。</li>
+<li>Hold <span class="doc-keyword">Alt</span> and right click-drag to zoom the Scene View. This is the same as scrolling with your mouse wheel.</li>
+<li>使用方向键，将沿X/Z平面方向移动。</li>
+</ul>
+
+<p>You might also find use in the <span class="doc-keyword">Hand Tool</span> (shortcut: <span class="doc-keyword">Q</span>), especially if you are using a one-button mouse. With the Hand tool selected:</p>
+<p>也许你已经发现了手形工具（快捷键：<span lang="EN-US">Q</span>），尤其是当你使用单键鼠标时，下面是各种选中状态的含义：</p>
+
+<p>
+<img src="../uploads/Main/UI-ViewTool.png" alt=""> Click-drag to drag the camera around.</p>
+<p>拖拽使摄像机视角平移。</p>
+
+<p>
+<img src="../uploads/Main/Editor-EyeTool.png" alt=""> Hold <span class="doc-keyword">Alt</span> and click-drag to orbit the camera around the current pivot point.</p>
+<p><span lang="EN-US">ALT+</span>鼠标左键拖动使当前视野沿当前轴点作圆周运动。</p>
+
+<p>
+<img src="../uploads/Main/Editor-ZoomTool.png" alt=""> Hold <span class="doc-keyword">Alt</span> and right click-drag to zoom the Scene View. On Mac you can also hold <span class="doc-keyword">Control</span> and click-drag instead.</p>
+<p>按住CTRL（Mac系统中为Command键）+ 鼠标左键拖动缩放当前视野。</p>
+
+<p>In the upper-right corner of the Scene View is the <span class="doc-keyword">Scene Gizmo</span>. This displays the Scene Camera’s current orientation, and allows you to quickly modify the viewing angle.</p>
+<p>在场景视图右上角是场景小工具<span lang="EN-US"> <strong>Scene Gizmo</strong></span><span lang="EN-US">.</span>。这里显示场景摄像机的当前方向，你可以快速地变换视角。</p>
+
+<figure>
+<img src="../uploads/Main/SceneGizmo40.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>Each of the coloured “arms” of the gizmo represents a geometric axis. You can click on any of the arms to set the camera to an orthographic (i.e. perspective-free) view looking along the corresponding axis. You can click on the text underneath the gizmo to switch between the normal perspective view and an isometric view. While in isometric mode, you can right-click drag to orbit, and Alt + middle-click drag to pan.</p>
+<p>每一个彩色的<span lang="EN-US">Gizmo</span>&ldquo;手柄&rdquo;代表一个几何轴。你可以点击任一个手柄把摄像机设置成正交，沿着相应的轴观察。您可以点击<span lang="EN-US">Gizmo</span>下面的文字，在正常透视视角，等轴视角之间进行切换（右键点击<span lang="EN-US">Gizmos</span>弹出列表，也可在此选择当前摄像机的视角模式）。当在正交模式下，你可以用拖拽右键使当前视野沿当前轴点作圆周运动。按着<span lang="EN-US">Alt</span>键拖拽鼠标左键平移视角。</p>
+
+<p class="class"><span class="cn">Note that the Scene Gizmo will be hidden when the view is in 2D mode, since the view is always directly at the XY plane.</span></p>
+<p class="cbracket">注意 Scene Gizmo在2D模式下会隐藏。因为视图始终平行XY平面。<span class="next"><span class="close"></span></span></p>
+
+<h2>Positioning GameObjects</h2>
+
+<p>See <a href="PositioningGameObjects.html">Positioning Game Objects</a> for full details on positioning GameObjects in the scene. Here’s a brief overview of the essentials:</p>
+<p>请阅读 <a href="PositioningGameObjects.html">Positioning Game Objects </a>了解场景中游戏对象 (GameObjects) 定位的详情，以下是对一些要点的概述：</p>
+
+<p>When building your games, you’ll place lots of different objects in your game world. To do this use the Transform Tools in the Toolbar to Translate, Rotate, and Scale individual GameObjects. Each has a corresponding Gizmo that appears around the selected GameObject in the Scene View. You can use the mouse and manipulate any Gizmo axis to alter the <span class="doc-keyword">Transform</span> Component of the GameObject, or you can type values directly into the number fields of the Transform Component in the Inspector.</p>
+<p>构建游戏时，会在游戏世界中放置许多不同对象。此时，使用工具栏 (Toolbar) 中的转换工具 (Transform Tools)，可转换、旋转及缩放单个游戏对象。每个都有相应的小图示 (Gizmo)，出现在场景视图 (Scene View) 的所选游戏对象 (GameObjects) 周围。可使用鼠标并操作任何 (Gizmo) 轴来修改游戏对象 (GameObjects) 的转换组件 (Transform Component)，也可以在检视器 (Inspector) 中转换组件 (Transform Component) 的数字字段中直接输入值。</p>
+
+<figure>
+<img src="../uploads/Main/TransformGizmo35.png" alt="">
+<figcaption></figcaption></figure>
+
+<h2>Rect Tool</h2>
+
+<p>The Rect Tool can be found in the Toolbar next to the Transform tools and allows you to view and edit the Rect handles on 2D and 3D objects. </p>
+<p>矩形工具在工具栏上，变换工具的旁边。可以用来浏览和编辑2D和3D物体上的矩形操作手柄。</p>
+
+<figure>
+<img src="../uploads/Main/RectTool.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>For 2D objects (sprites) you can hold down shift to scale uniformly. If you scale non-uniformly along axis that don’t match the local axes for the object, it will be scaled along the closest axes it can. For 3D objects you can now also use rect handles; Rect handles are shown for different planes depending on what angle the object is viewed from.</p>
+<p>2D物体（精灵）你可以按住Shift键进行均匀缩放。//todo!</p>
+<p>3D物体现在同样可以使用矩形工具。会根据你浏览物体的角度，矩形操作柄显示在不同的平面。</p>
+<h2>Scene View Control Bar 场景视图控制条</h2>
+
+<figure>
+<img src="../uploads/Main/SceneViewControlBar43.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>The control bar lets you choose various options for the scene view. You can switch on or off the audio, lighting and 2D mode and also control how objects, image effects and gizmos will be displayed. See the <a href="ViewModes.html">View Modes</a> section for further details.</p>
+<p>可使用场景视图 (Scene View) 控制条在不同视图模式中查看场景：纹理、线框、RGB、夸张等等。还可以看（听）场景视图 (Scene View) 中的游戏照明、游戏元素及声音。请更多细节参阅<a href="ViewModes.html">View Modes</a>。</p>
+<div class="nextprev clear">
+  <div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="Toolbar.html"></a></span><div class="tip">Toolbar</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="GameView.html"></a></span><div class="tip">Game View</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>
